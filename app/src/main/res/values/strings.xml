@@ -6,4 +6,20 @@
     <string name="example">Example: johndoe@example.com</string>
     <string name="password">Password</string>
     <string name="login_google">Login with Goggle</string>
+    <string name="register">Register</string>
+    <string name="opening_register">Complete your own data below!</string>
+    <string name="full_name">Full Name</string>
+    <string name="example_register">Example: Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="or">Or</string>
+    <string name="register_google">Register with Google</string>
+    <string name="register_account">Let\'s Register</string>
+    <string name="terms_of_service">By login or register, you agree to the Terms of Service and Privacy Policy.</string>
+    <string name="welcome">Welcome to G-Parking!</string>
+    <string name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="setting">Setting</string>
+    <string name="x">X</string>
+    <string name="hold_on">Hold on.</string>
+    <string name="verification">We\'re sending your verification link. Please check your email...</string>
+    <string name="splashscreen">SplashScreen</string>
 </resources>

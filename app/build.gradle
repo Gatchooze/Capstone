@@ -23,6 +23,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    buildFeatures {
+        viewBinding true
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -42,4 +45,13 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //ViewPager2
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    //RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+
+    //Lottie Animation
+    implementation 'com.airbnb.android:lottie:3.4.1'
 }
