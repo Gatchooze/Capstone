@@ -1,17 +1,18 @@
 package com.example.capstoneproject.ui.landing
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.ActivityLandingPageBinding
-import com.example.capstoneproject.ui.login.LoginActivity
+import com.example.capstoneproject.ui.login.LoginPhoneActivity
 import com.example.capstoneproject.ui.register.RegisterActivity
 
 class LandingPageActivity : AppCompatActivity() {
@@ -20,6 +21,9 @@ class LandingPageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_logo)
 
         binding = ActivityLandingPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -41,7 +45,7 @@ class LandingPageActivity : AppCompatActivity() {
             if (binding.viewpagerImageSlider.currentItem + 1 < introSlideAdapter.itemCount) {
                 binding.viewpagerImageSlider.currentItem += 1
             } else {
-                Intent(applicationContext, LoginActivity::class.java).also {
+                Intent(applicationContext, LoginPhoneActivity::class.java).also {
                     startActivity(it)
                 }
             }
@@ -118,4 +122,11 @@ class LandingPageActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.side_menu1, menu)
+        return true
+    }
+
 }

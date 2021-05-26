@@ -15,7 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.capstoneproject.R;
-import com.example.capstoneproject.ui.login.LoginActivity;
+import com.example.capstoneproject.ui.login.LoginEmailActivity;
+import com.example.capstoneproject.ui.login.LoginPhoneActivity;
 
 public class RegisterActivity extends AppCompatActivity {
     Dialog myDialog;
@@ -36,6 +37,9 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
 
         myDialog = new Dialog(this);
 
@@ -93,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         tvClose.setOnClickListener((v -> {
             myDialog.dismiss();
-            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            Intent intent = new Intent(RegisterActivity.this, LoginPhoneActivity.class);
             startActivity(intent);
         }));
 
