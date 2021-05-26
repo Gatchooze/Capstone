@@ -25,4 +25,19 @@
     <string name="hold_on">Hold on.</string>
     <string name="verification">We\'re sending your verification link. Please check your email...</string>
     <string name="splashscreen">SplashScreen</string>
+    <string name="mall_parkir">Parkiran Mall</string>
+    <string name="rating_star">4.9/5.0</string>
+    <string name="distance">3.69 km</string>
+    <string name="parking_detail">Parking Detail</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description_title">Description</string>
+    <string name="description_fragment">Basement Parking and 40 parking per basement</string>
+    <string name="pricing">Pricing</string>
+    <string name="detail_pricing_car">The First 2 hours - IDR. 5000 <br><br>Next Hours- IDR. 1000/hrs.</br></br></string>
+    <string name="book">Book</string>
+    <string name="description_motorcycle">Groundfloor motor parking with max. capacity 340.</string>
+    <string name="detail_pricing_motor">The First 2 hours - IDR. 2000 <br><br>Next Hours- IDR. 1000/hrs.</br></br></string>
+    <string name="tab_car">Car</string>
+    <string name="tab_motorcycle">Motorcycle</string>
 </resources>
