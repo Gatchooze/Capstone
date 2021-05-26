@@ -19,20 +19,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.landing.LandingPageActivity" />
-
         <activity
             android:name=".ui.register.RegisterActivity"
-            android:parentActivityName=".ui.splash.SplashScreenActivity"/>
-
+            android:parentActivityName=".ui.splash.SplashScreenActivity" />
         <activity
             android:name=".ui.login.LoginPhoneActivity"
-            android:parentActivityName=".ui.splash.SplashScreenActivity"/>
-
+            android:parentActivityName=".ui.splash.SplashScreenActivity" />
         <activity
             android:name=".ui.login.LoginEmailActivity"
-            android:parentActivityName=".ui.splash.SplashScreenActivity"/>
+            android:parentActivityName=".ui.splash.SplashScreenActivity" />
+        <activity android:name=".ui.main.MainActivity"></activity>
 
-        <activity android:name=".ui.main.MainActivity" />
     </application>
 
 </manifest>

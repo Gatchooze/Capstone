@@ -19,6 +19,8 @@
     <string name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="setting">Setting</string>
     <string name="language">Language</string>
+    <string name="notifications">Notifications</string>
+    <string name="search">Search</string>
     <string name="x">X</string>
     <string name="hold_on">Hold on.</string>
     <string name="verification">We\'re sending your verification link. Please check your email...</string>
