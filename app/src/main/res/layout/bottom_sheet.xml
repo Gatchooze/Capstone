@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_shape_corner"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="32dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_shape_oval" />
+
+    <TextView
+        android:id="@+id/txt_title_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="16dp"
+        android:text="@string/title_detail"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filled_text_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="200dp"
+        android:hint="@string/plate_number"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txt_title_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:padding="16dp"
+        android:text="@string/time"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_time" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_title_parking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="16dp"
+        android:text="@string/parking_position"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_parking_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="312dp"
+            android:text="@string/basement_01"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_description_parking"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/available"
+            android:textColor="@color/colorGreen"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/txt_parking_car"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txt_parking_car"
+            app:layout_constraintVertical_bias="0.108" />
+
+        <TextView
+            android:id="@+id/txt_parking_car_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="45dp"
+            android:layout_marginRight="312dp"
+            android:text="@string/basement_02"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_description_parking_2"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/full"
+            android:textColor="@color/colorRed"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/txt_parking_car_2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txt_parking_car_2"
+            app:layout_constraintVertical_bias="0.108" />
+
+        <TextView
+            android:id="@+id/txt_parking_car_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="85dp"
+            android:layout_marginRight="312dp"
+            android:text="@string/basement_02"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_description_parking_3"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/available_2"
+            android:textColor="@color/colorGreen"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/txt_parking_car_3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txt_parking_car_3"
+            app:layout_constraintVertical_bias="0.108" />
+
+        <TextView
+            android:id="@+id/promo_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:padding="16dp"
+            android:text="@string/add_promo_code"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/txt_description_parking_3" />
+
+        <Button
+            android:id="@+id/btn_book_detail"
+            android:layout_width="325dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="144dp"
+            android:layout_marginRight="36dp"
+            android:background="@drawable/custom_button1"
+            android:backgroundTint="@color/blue"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/promo_code" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

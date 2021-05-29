@@ -40,4 +40,14 @@
     <string name="detail_pricing_motor">The First 2 hours - IDR. 2000 <br><br>Next Hours- IDR. 1000/hrs.</br></br></string>
     <string name="tab_car">Car</string>
     <string name="tab_motorcycle">Motorcycle</string>
+    <string name="title_detail">Set Your License Plate Vehicle</string>
+    <string name="plate_number">Plate Number</string>
+    <string name="time">Set Your Arrival Time</string>
+    <string name="parking_position">Set Your Parking Position</string>
+    <string name="basement_01">Basement 01</string>
+    <string name="available">3 Available</string>
+    <string name="basement_02">Basement 02</string>
+    <string name="full">Full</string>
+    <string name="available_2">25 Available</string>
+    <string name="add_promo_code"><u>Add promo code</u></string>
 </resources>
