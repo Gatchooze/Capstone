@@ -13,12 +13,12 @@ import android.widget.Toast;
 import com.example.capstoneproject.R;
 import com.example.capstoneproject.ui.register.RegisterActivity;
 
-public class LoginEmailActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_email);
+        setContentView(R.layout.activity_login);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
@@ -32,13 +32,13 @@ public class LoginEmailActivity extends AppCompatActivity {
             String password = etPassword.getText().toString();
 
             if (email.isEmpty()) {
-                Toast.makeText(LoginEmailActivity.this, "Phone number must be filled", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Phone number must be filled", Toast.LENGTH_SHORT).show();
             } else if (password.isEmpty()) {
-                Toast.makeText(LoginEmailActivity.this, "Password must be filled.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Password must be filled.", Toast.LENGTH_SHORT).show();
             } else if (!checkUserLogin(email, password)) {
-                Toast.makeText(LoginEmailActivity.this, "Phone number and password must be registered", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Phone number and password must be registered", Toast.LENGTH_SHORT).show();
             } else {
-                Intent intent = new Intent(LoginEmailActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });

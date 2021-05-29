@@ -12,7 +12,7 @@ import androidx.core.view.get
 import androidx.viewpager2.widget.ViewPager2
 import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.ActivityLandingPageBinding
-import com.example.capstoneproject.ui.login.LoginPhoneActivity
+import com.example.capstoneproject.ui.login.LoginActivity
 import com.example.capstoneproject.ui.register.RegisterActivity
 
 class LandingPageActivity : AppCompatActivity() {
@@ -45,7 +45,7 @@ class LandingPageActivity : AppCompatActivity() {
             if (binding.viewpagerImageSlider.currentItem + 1 < introSlideAdapter.itemCount) {
                 binding.viewpagerImageSlider.currentItem += 1
             } else {
-                Intent(applicationContext, LoginPhoneActivity::class.java).also {
+                Intent(applicationContext, LoginActivity::class.java).also {
                     startActivity(it)
                 }
             }

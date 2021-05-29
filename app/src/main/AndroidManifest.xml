@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CapstoneProject">
-        <activity android:name=".ui.detail.cardetail.CarParkDetailActivity"></activity>
+        <activity android:name=".ui.search.SearchListActivity"></activity>
+        <activity android:name=".ui.detail.cardetail.CarParkDetailActivity" />
         <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
@@ -24,13 +25,9 @@
             android:name=".ui.register.RegisterActivity"
             android:parentActivityName=".ui.splash.SplashScreenActivity" />
         <activity
-            android:name=".ui.login.LoginPhoneActivity"
+            android:name=".ui.login.LoginActivity"
             android:parentActivityName=".ui.splash.SplashScreenActivity" />
-        <activity
-            android:name=".ui.login.LoginEmailActivity"
-            android:parentActivityName=".ui.splash.SplashScreenActivity" />
-        <activity android:name=".ui.main.MainActivity"></activity>
-
+        <activity android:name=".ui.main.MainActivity" />
     </application>
 
 </manifest>
