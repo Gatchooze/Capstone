@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.capstoneproject.R;
+import com.example.capstoneproject.ui.main.MainActivity;
 import com.example.capstoneproject.ui.register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -27,19 +29,24 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etPassword = findViewById(R.id.et_password);
         final Button btnLogin = findViewById(R.id.btn_login);
 
-        btnLogin.setOnClickListener((v) -> {
-            String email = etEmail.getText().toString();
-            String password = etPassword.getText().toString();
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = etEmail.getText().toString();
+                String password = etPassword.getText().toString();
 
-            if (email.isEmpty()) {
-                Toast.makeText(LoginActivity.this, "Phone number must be filled", Toast.LENGTH_SHORT).show();
-            } else if (password.isEmpty()) {
-                Toast.makeText(LoginActivity.this, "Password must be filled.", Toast.LENGTH_SHORT).show();
-            } else if (!checkUserLogin(email, password)) {
-                Toast.makeText(LoginActivity.this, "Phone number and password must be registered", Toast.LENGTH_SHORT).show();
-            } else {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
+                if (email.isEmpty()) {
+                    Toast.makeText(LoginActivity.this, "Email must be filled", Toast.LENGTH_SHORT).show();
+                } else if (password.isEmpty()) {
+                    Toast.makeText(LoginActivity.this, "Password must be filled.", Toast.LENGTH_SHORT).show();
+                }
+//                else if (!checkUserLogin(email, password)) {
+//                    Toast.makeText(LoginActivity.this, "Phone number and password must be registered", Toast.LENGTH_SHORT).show();
+//                }
+                else {
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
