@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CapstoneProject">
-        <activity android:name=".ui.search.SearchListActivity"></activity>
+        <activity
+            android:name=".ui.account.SettingAccountActivity" />
+<!--            android:theme="@style/Theme.AppCompat.NoActionBar"/>-->
+        <activity android:name=".ui.search.SearchListActivity" />
         <activity android:name=".ui.detail.cardetail.CarParkDetailActivity" />
         <activity
             android:name=".ui.splash.SplashScreenActivity"

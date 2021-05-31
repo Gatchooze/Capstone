@@ -24,6 +24,7 @@
                 android:paddingLeft="20dp">
 
                 <TextView
+                    android:id="@+id/mall_name_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nama Mall"
@@ -35,11 +36,13 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/iv_rating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_rating"/>
 
                     <TextView
+                        android:id="@+id/rating_item"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rating"
@@ -53,11 +56,13 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/iv_car"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_car"/>
 
                     <TextView
+                        android:id="@+id/car_status_item"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Car Status"
@@ -65,11 +70,13 @@
                         android:layout_marginRight="30dp" />
 
                     <ImageView
+                        android:id="@+id/iv_motor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_motor"/>
 
                     <TextView
+                        android:id="@+id/motor_status_item"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Motor Status"
