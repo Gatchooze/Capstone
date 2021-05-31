@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.example.capstoneproject.R;
 import com.example.capstoneproject.ui.main.MainActivity;
-import com.example.capstoneproject.ui.register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

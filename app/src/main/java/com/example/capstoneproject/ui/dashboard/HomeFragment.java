@@ -9,16 +9,9 @@ import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.capstoneproject.R;
-import com.example.capstoneproject.ui.main.MainActivity;
-import com.example.capstoneproject.ui.mall.MallAdapter;
-import com.example.capstoneproject.ui.mall.MallModel;
 import com.example.capstoneproject.ui.search.SearchListActivity;
-
-import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
     ImageButton imageButton;

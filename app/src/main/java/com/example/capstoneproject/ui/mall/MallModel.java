@@ -3,74 +3,65 @@ package com.example.capstoneproject.ui.mall;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class MallModel {
-//        implements Parcelable {
-//    public int id;
-//    public String mallName;
-//    public String carCapacity;
-//    public String motorCapacity;
-//
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-//
-//    public String getMallName() {
-//        return mallName;
-//    }
-//
-//    public void setMallName(String mallName) {
-//        this.mallName = mallName;
-//    }
-//
-//    public String getCarCapacity() {
-//        return carCapacity;
-//    }
-//
-//    public void setCarCapacity(String carCapacity) {
-//        this.carCapacity = carCapacity;
-//    }
-//
-//    public String getMotorCapacity() {
-//        return motorCapacity;
-//    }
-//
-//    public void setMotorCapacity(String motorCapacity) {
-//        this.motorCapacity = motorCapacity;
-//    }
-//
-//    protected MallModel(Parcel in) {
-//        id = in.readInt();
-//        mallName = in.readString();
-//        carCapacity = in.readString();
-//        motorCapacity = in.readString();
-//    }
-//
-//    public static final Creator<MallModel> CREATOR = new Creator<MallModel>() {
-//        @Override
-//        public MallModel createFromParcel(Parcel in) {
-//            return new MallModel(in);
-//        }
-//
-//        @Override
-//        public MallModel[] newArray(int size) {
-//            return new MallModel[size];
-//        }
-//    };
-//
-//    @Override
-//    public int describeContents() {
-//        return 0;
-//    }
-//
-//    @Override
-//    public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeInt(id);
-//        dest.writeString(mallName);
-//        dest.writeString(carCapacity);
-//        dest.writeString(motorCapacity);
-//    }
+public class MallModel implements Parcelable{
+    private String mText1;
+    private String mText2;
+    private String mText3;
+    private String mText4;
+
+    public MallModel(String text1, String text2, String text3, String text4) {
+        mText1 = text1;
+        mText2 = text2;
+        mText3 = text3;
+        mText4 = text4;
+    }
+
+    protected MallModel(Parcel in) {
+        mText1 = in.readString();
+        mText2 = in.readString();
+        mText3 = in.readString();
+        mText4 = in.readString();
+    }
+
+    public static final Creator<MallModel> CREATOR = new Creator<MallModel>() {
+        @Override
+        public MallModel createFromParcel(Parcel in) {
+            return new MallModel(in);
+        }
+
+        @Override
+        public MallModel[] newArray(int size) {
+            return new MallModel[size];
+        }
+    };
+
+
+    public String getText1() {
+        return mText1;
+    }
+
+    public String getText2() {
+        return mText2;
+    }
+
+    public String getText3() {
+        return mText3;
+    }
+
+    public String getText4() {
+        return mText4;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mText1);
+        dest.writeString(mText2);
+        dest.writeString(mText3);
+        dest.writeString(mText4);
+    }
 }

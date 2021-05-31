@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 
 import com.example.capstoneproject.R;
 import com.example.capstoneproject.ui.account.SettingAccountActivity;
-import com.example.capstoneproject.ui.search.SearchListActivity;
 
 public class AccountFragment extends Fragment {
     ImageButton imageButton;
