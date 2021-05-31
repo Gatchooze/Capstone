@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_bright">
+    android:background="@android:color/white"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs_layout_activity"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Activity Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:background="@android:color/white"
+        app:tabTextColor="@android:color/black" />
 
-</RelativeLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

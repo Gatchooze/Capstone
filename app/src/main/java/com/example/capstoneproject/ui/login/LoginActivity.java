@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
 
-        final EditText etEmail = findViewById(R.id.ed_email);
+        final EditText etEmail = findViewById(R.id.et_email);
         final EditText etPassword = findViewById(R.id.et_password);
         final Button btnLogin = findViewById(R.id.btn_login);
 

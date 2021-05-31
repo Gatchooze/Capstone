@@ -186,7 +186,7 @@
             android:layout_marginRight="36dp"
             android:background="@drawable/custom_button1"
             android:backgroundTint="@color/blue"
-            android:text="Next"
+            android:text="@string/next"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="14sp"

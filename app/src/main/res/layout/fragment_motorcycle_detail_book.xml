@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ui.detail.cardetail.CarParkDetailBookFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_mall_motorcycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_mall" />
+
+        <ImageView
+            android:id="@+id/img_back_icon_book_motorcycle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="16dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_arrow_white" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_parkir_book_motorcycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:text="@string/mall_parkir"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_book_motorcycle"
+            android:layout_width="343dp"
+            android:layout_height="67dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="20dp">
+
+            <ImageView
+                android:id="@+id/star_book_motorcycle"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_gravity="start"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_star" />
+
+            <TextView
+                android:id="@+id/rating_book_motorcycle"
+                android:layout_width="55dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/rating_star"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="47dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_line" />
+
+            <ImageView
+                android:id="@+id/img_location_book_motorcycle"
+                android:layout_width="14dp"
+                android:layout_height="17dp"
+                android:layout_gravity="start"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_location" />
+
+            <TextView
+                android:id="@+id/distance_book_motorcycle"
+                android:layout_width="55dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="155dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/distance"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="47dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="210dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_line" />
+
+            <TextView
+                android:id="@+id/open_close_book_motorcycle"
+                android:layout_width="55dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="20dp"
+                android:text="Open"
+                android:textColor="#31B057"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/title_parkir_detail_book_motorcycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:text="@string/parking_detail"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_clock_motorcycle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_clock" />
+
+            <TextView
+                android:id="@+id/txt_clock_motorcycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/schedule"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_schedule_motorcycle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_schedule" />
+
+            <TextView
+                android:id="@+id/txt_schedule_motorcycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/schedule_date"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_plate_motorcycle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_plate" />
+
+            <TextView
+                android:id="@+id/txt_plate_motorcycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/plate"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_qrcode_motorcycle"
+            android:layout_width="325dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/custom_button2"
+            android:text="@string/qr_code"
+            android:textAllCaps="false"
+            android:textColor="@color/blue"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_pay_now_motorcycle"
+            android:layout_width="325dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_button1"
+            android:backgroundTint="@color/blue"
+            android:text="@string/pay_now"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</LinearLayout>

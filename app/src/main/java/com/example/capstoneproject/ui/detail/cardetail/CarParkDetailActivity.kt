@@ -61,5 +61,9 @@ class CarParkDetailActivity : AppCompatActivity() {
             bottomSheetDialog.setContentView(bottomSheetView)
             bottomSheetDialog.show()
         }
+
+        binding.imgBackIcon.setOnClickListener {
+            onBackPressed()
+        }
     }
 }
