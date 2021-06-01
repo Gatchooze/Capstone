@@ -13,9 +13,12 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.ActivityLandingPageBinding
 import com.example.capstoneproject.ui.login.LoginActivity
+import com.example.capstoneproject.ui.main.MainActivity
 import com.example.capstoneproject.ui.register.RegisterActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class LandingPageActivity : AppCompatActivity() {
+    var auth: FirebaseAuth? = null
 
     private lateinit var binding: ActivityLandingPageBinding
 
@@ -24,6 +27,11 @@ class LandingPageActivity : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_logo)
+
+
+        //Firebase Instance
+        auth = FirebaseAuth.getInstance()
+
 
         binding = ActivityLandingPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -120,6 +128,14 @@ class LandingPageActivity : AppCompatActivity() {
                     )
                 )
             }
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (auth!!.currentUser != null) {
+            startActivity(Intent(this@LandingPageActivity, MainActivity::class.java))
+            finish()
         }
     }
 

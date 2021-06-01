@@ -24,6 +24,7 @@
             android:paddingLeft="10dp">
 
             <TextView
+                android:id="@+id/tv_full_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="User Name"
@@ -31,12 +32,14 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_phone_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Phone Number"
                 android:textSize="13dp" />
 
             <TextView
+                android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Email"

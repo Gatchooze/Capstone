@@ -50,4 +50,34 @@
     <string name="full">Full</string>
     <string name="available_2">25 Available</string>
     <string name="add_promo_code"><u>Add promo code</u></string>
+
+    <string name="qr_code">QR Code</string>
+    <string name="schedule">Schedule</string>
+    <string name="schedule_date">Schedule Date</string>
+    <string name="plate">Plate</string>
+    <string name="random_string">Random String</string>
+    <string name="parking_place">Parking Place</string>
+    <string name="checkin_time">Checkin Time</string>
+    <string name="booked_on">Booked On</string>
+    <string name="license_plate">License Plate</string>
+    <string name="next">Next</string>
+    <string name="total">Total</string>
+    <string name="balance_1">Balance 1</string>
+    <string name="detail">Detail</string>
+    <string name="detail_in">Detail In</string>
+    <string name="detail_out">Detail Out</string>
+
+    <string name="check_plate_number">Check Plate Number</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="balance">Balance</string>
+    <string name="ovo">Ovo</string>
+    <string name="balance_2">Balance 2</string>
+    <string name="gopay">Gopay</string>
+    <string name="balance_3">Balance 3</string>
+    <string name="dana">Dana</string>
+    <string name="balance_4">Balance 4</string>
+    <string name="pay_now">Pay Now</string>
+
+    <string name="tab_activity">Activity</string>
+    <string name="tab_history">History</string>
 </resources>

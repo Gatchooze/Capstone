@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "426679585080",
+    "project_id": "g-parking-314202",
+    "storage_bucket": "g-parking-314202.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426679585080:android:50a9fbb4c09482705319cd",
+        "android_client_info": {
+          "package_name": "com.example.capstoneproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426679585080-4gkdqr7bnos6vf7dk711nru8sfj46oq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnCYNgOGitIYJZFcCyWAwPU6aURrbQUR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426679585080-4gkdqr7bnos6vf7dk711nru8sfj46oq9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

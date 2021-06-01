@@ -1,5 +1,6 @@
 package com.example.capstoneproject.ui.register;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
@@ -16,6 +17,13 @@ import android.widget.Toast;
 
 import com.example.capstoneproject.R;
 import com.example.capstoneproject.ui.login.LoginActivity;
+import com.example.capstoneproject.ui.main.MainActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import org.jetbrains.annotations.NotNull;
 
 public class RegisterActivity extends AppCompatActivity {
     Dialog myDialog;
@@ -23,7 +31,9 @@ public class RegisterActivity extends AppCompatActivity {
     EditText etFullname, etEmail, etPhoneNumber, etPassword;
     Button btnRegister, btnRegisterGoogle;
 
-    private void init() {
+    FirebaseAuth auth;
+
+     private void init() {
         etFullname = findViewById(R.id.et_full_name);
         etEmail = findViewById(R.id.et_email);
         etPhoneNumber = findViewById(R.id.et_phoneNumber);
@@ -43,6 +53,9 @@ public class RegisterActivity extends AppCompatActivity {
         myDialog = new Dialog(this);
 
         init();
+
+        //Firebase Instance
+        auth = FirebaseAuth.getInstance();
 
         btnRegister.setOnClickListener((v) -> {
             valid();
@@ -83,7 +96,20 @@ public class RegisterActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(this, "Password must be less than 15 characters.", Toast.LENGTH_SHORT);
             toast.show();
         } else {
-            ShowPopUp();
+//            ShowPopUp();
+
+            auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                        finish();
+                    } else {
+                        Toast.makeText(RegisterActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
         }
     }
 
@@ -156,6 +182,15 @@ public class RegisterActivity extends AppCompatActivity {
         }
         return true;
     }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        if (auth.getCurrentUser() != null) {
+//            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+//            finish();
+//        }
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
