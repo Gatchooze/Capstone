@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.Button;
@@ -23,17 +24,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import org.jetbrains.annotations.NotNull;
-
 public class RegisterActivity extends AppCompatActivity {
-    Dialog myDialog;
-
     EditText etFullname, etEmail, etPhoneNumber, etPassword;
     Button btnRegister, btnRegisterGoogle;
 
     FirebaseAuth auth;
 
-     private void init() {
+    private void init() {
         etFullname = findViewById(R.id.et_full_name);
         etEmail = findViewById(R.id.et_email);
         etPhoneNumber = findViewById(R.id.et_phoneNumber);
@@ -50,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
 
-        myDialog = new Dialog(this);
+        LoadingDialog loadingDialog = new LoadingDialog(RegisterActivity.this);
 
         init();
 
@@ -59,6 +56,15 @@ public class RegisterActivity extends AppCompatActivity {
 
         btnRegister.setOnClickListener((v) -> {
             valid();
+
+            loadingDialog.startLoadingDialog();
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                 loadingDialog.dissmissDialog();
+                }
+            }, 5000);
         });
     }
 
@@ -96,8 +102,6 @@ public class RegisterActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(this, "Password must be less than 15 characters.", Toast.LENGTH_SHORT);
             toast.show();
         } else {
-//            ShowPopUp();
-
             auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -111,23 +115,6 @@ public class RegisterActivity extends AppCompatActivity {
             });
 
         }
-    }
-
-    private void ShowPopUp() {
-        TextView tvClose;
-
-        myDialog.setContentView(R.layout.custompopup);
-
-        tvClose = (TextView) myDialog.findViewById(R.id.tv_close);
-
-        tvClose.setOnClickListener((v -> {
-            myDialog.dismiss();
-            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-            startActivity(intent);
-        }));
-
-        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        myDialog.show();
     }
 
     private boolean checkAlphaNum(String password) {

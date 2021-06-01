@@ -98,15 +98,28 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/et_phoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_column="2"
-            android:layout_gravity="fill_horizontal"
-            android:gravity="fill"
-            android:hint="@string/phone_number"
-            android:inputType="phone" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_phoneCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/phone_code"/>
+
+            <EditText
+                android:id="@+id/et_phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_gravity="fill_horizontal"
+                android:layout_toRightOf="@id/iv_phoneCode"
+                android:gravity="fill"
+                android:hint="@string/phone_number"
+                android:inputType="phone" />
+
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
