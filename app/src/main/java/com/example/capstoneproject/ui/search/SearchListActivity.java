@@ -4,12 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
+import android.widget.SearchView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.capstoneproject.R;
+import com.example.capstoneproject.ui.detail.cardetail.CarParkDetailActivity;
+import com.example.capstoneproject.ui.main.MainActivity;
 import com.example.capstoneproject.ui.mall.MallAdapter;
 import com.example.capstoneproject.ui.mall.MallModel;
 
@@ -54,14 +60,49 @@ public class SearchListActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mMallAdapter);
 
-        mMallAdapter.setOnItemClickListener(new MallAdapter.OnItemClickListener() {
+//        mMallAdapter.setOnItemClickListener(new MallAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(int position) {
+//                Intent intent = new Intent(SearchListActivity.this, CarParkDetailActivity.class);
+//                intent.putExtra("Mall Item", dataList.get(position));
+//                startActivity(intent);
+//            }
+//        });
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.side_menu3, menu);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onItemClick(int position) {
-                Intent intent = new Intent(SearchListActivity.this, SearchLocationActivity.class);
-                intent.putExtra("Mall Item", dataList.get(position));
-                startActivity(intent);
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mMallAdapter.getFilter().filter(newText);
+                return false;
             }
         });
 
+        return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nearby:
+                Intent intent2 = new Intent(SearchListActivity.this, SearchLocationActivity.class);
+                startActivity(intent2);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }

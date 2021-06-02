@@ -3,6 +3,7 @@ package com.example.capstoneproject.ui.mall;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,10 +11,44 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.capstoneproject.R;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class MallAdapter extends RecyclerView.Adapter<MallAdapter.MallViewHolder> {
     private ArrayList<MallModel> dataList;
+    private List<MallModel> mMallListFull;
     private OnItemClickListener mListener;
+
+    public Filter getFilter() {
+        return mallFilter;
+    }
+
+    private Filter mallFilter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            List<MallModel> filteredList = new ArrayList<>();
+            if (constraint == null || constraint.length() == 0) {
+                filteredList.addAll(mMallListFull);
+            } else {
+                String filterPattern = constraint.toString().toLowerCase().trim();
+                for (MallModel item : mMallListFull) {
+                    if (item.getText2().toLowerCase().contains(filterPattern)) {
+                        filteredList.add(item);
+                    }
+                }
+            }
+            FilterResults results = new FilterResults();
+            results.values = filteredList;
+            return results;
+        }
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            dataList.clear();
+            dataList.addAll((List) results.values);
+            notifyDataSetChanged();
+        }
+    };
+
 
     public interface OnItemClickListener {
         void onItemClick(int position);

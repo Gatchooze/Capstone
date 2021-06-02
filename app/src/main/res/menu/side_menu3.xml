@@ -10,9 +10,9 @@
         app:actionViewClass="android.widget.SearchView"/>
 
     <item
-        android:id="@+id/notifications"
-        android:icon="@drawable/ic_notifications"
-        android:title="@string/notifications"
+        android:id="@+id/nearby"
+        android:icon="@drawable/ic_nearby"
+        android:title="@string/nearby"
         app:showAsAction="ifRoom|collapseActionView" />
 
 </menu>

@@ -21,6 +21,7 @@
     <string name="language">Language</string>
     <string name="notifications">Notifications</string>
     <string name="search">Search</string>
+    <string name="nearby">Nearby</string>
     <string name="x">X</string>
     <string name="hold_on">Hold on.</string>
     <string name="verification">We\'re sending your verification link. Please check your email...</string>

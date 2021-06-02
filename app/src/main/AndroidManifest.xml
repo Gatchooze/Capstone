@@ -11,6 +11,9 @@
     <!--User check permission location-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
+    <!--User current google maps loction-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,10 +21,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CapstoneProject">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCW3yuGMl3I9-TY_9ZpEose28_zIk03eOI"/>
+
         <activity
             android:name=".ui.account.SettingAccountActivity"
             android:parentActivityName=".ui.account.SettingAccountActivity"/>
 <!--            android:theme="@style/Theme.AppCompat.NoActionBar"/>-->
+        <activity android:name=".ui.search.SearchLocationActivity" />
         <activity android:name=".ui.search.SearchListActivity" />
         <activity android:name=".ui.detail.cardetail.CarParkDetailActivity" />
         <activity

@@ -3,14 +3,20 @@ package com.example.capstoneproject.ui.dashboard;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.ImageButton;
+import android.widget.SearchView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.capstoneproject.R;
+import com.example.capstoneproject.ui.mall.MallAdapter;
 import com.example.capstoneproject.ui.search.SearchListActivity;
 
 public class HomeFragment extends Fragment {

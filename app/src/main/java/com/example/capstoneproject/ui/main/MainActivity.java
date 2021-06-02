@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,9 +18,11 @@ import com.example.capstoneproject.ui.dashboard.AccountFragment;
 import com.example.capstoneproject.ui.dashboard.ActivityFragment;
 import com.example.capstoneproject.ui.dashboard.FeedFragment;
 import com.example.capstoneproject.ui.dashboard.HomeFragment;
+import com.example.capstoneproject.ui.mall.MallAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+    private MallAdapter mMallAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +64,26 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.side_menu2, menu);
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.side_menu2, menu);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
+        searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mMallAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        return true;
+    }
 
 }
