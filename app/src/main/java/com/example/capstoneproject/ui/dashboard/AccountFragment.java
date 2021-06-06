@@ -21,6 +21,8 @@ import com.example.capstoneproject.ui.login.LoginActivity;
 //import com.google.android.gms.auth.api.signin.GoogleSignIn;
 //import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.example.capstoneproject.ui.user.UserModel;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -58,10 +60,11 @@ public class AccountFragment extends Fragment {
 
         auth = FirebaseAuth.getInstance();
 
-//        GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(getContext());
-//        if (signInAccount != null) {
-//            tvEmail.setText(signInAccount.getEmail());
-//        }
+        GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(getActivity());
+        if (signInAccount != null) {
+            tvFullName.setText(signInAccount.getDisplayName());
+            tvEmail.setText(signInAccount.getEmail());
+        }
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
