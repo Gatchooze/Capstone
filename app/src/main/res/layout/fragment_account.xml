@@ -68,7 +68,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="@string/account_settings"
             android:textSize="15sp"
             android:textStyle="bold"/>
 
@@ -89,7 +89,7 @@
                 android:layout_width="344dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="How to use"
+                android:text="@string/account_howtouse"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -118,7 +118,7 @@
                 android:layout_width="344dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="Language Option"
+                android:text="@string/account_languageoption"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -147,7 +147,7 @@
                 android:layout_width="344dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="Terms of Service"
+                android:text="@string/account_termsofservice"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -176,7 +176,7 @@
                 android:layout_width="344dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="Privacy Policy"
+                android:text="@string/account_privacypolicy"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -205,7 +205,7 @@
                 android:layout_width="344dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="Referral Code"
+                android:text="@string/account_referralcode"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -230,7 +230,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Account"
+            android:text="@string/account_account"
             android:textSize="15sp"
             android:textStyle="bold"/>
 
@@ -251,7 +251,7 @@
                 android:layout_width="344dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="FAQ"
+                android:text="@string/account_faq"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -280,7 +280,7 @@
                 android:layout_width="344dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="Sync My-E-Wallet"
+                android:text="@string/account_syncmyewallet"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -309,7 +309,7 @@
                 android:layout_width="344dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
-                android:text="Help/Chat"
+                android:text="@string/account_helpchat"
                 android:textSize="15dp"
                 android:textStyle="bold" />
 
@@ -327,7 +327,7 @@
         android:id="@+id/btn_signout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Out"
+        android:text="@string/account_signout"
         android:layout_below="@+id/account"
         android:layout_marginTop="35dp"
         android:background="@drawable/custom_button3"

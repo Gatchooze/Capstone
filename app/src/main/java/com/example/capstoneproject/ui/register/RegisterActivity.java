@@ -19,16 +19,30 @@ import android.widget.Toast;
 import com.example.capstoneproject.R;
 import com.example.capstoneproject.ui.login.LoginActivity;
 import com.example.capstoneproject.ui.main.MainActivity;
+import com.example.capstoneproject.ui.user.UserModel;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import org.jetbrains.annotations.NotNull;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText etFullname, etEmail, etPhoneNumber, etPassword;
     Button btnRegister, btnRegisterGoogle;
 
     FirebaseAuth auth;
+
+    //Realtime Database
+//    FirebaseDatabase rootNode;
+//    DatabaseReference reference;
+
+    //CRUD Firebase Realtime Database #2
+//    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
     private void init() {
         etFullname = findViewById(R.id.et_full_name);
@@ -56,6 +70,20 @@ public class RegisterActivity extends AppCompatActivity {
 
         btnRegister.setOnClickListener((v) -> {
             valid();
+
+            //Realtime Database
+//            rootNode = FirebaseDatabase.getInstance();
+//            reference = rootNode.getReference("users");
+
+            //Get all the values
+//            String fullName = etFullname.getText().toString();
+//            String email = etEmail.getText().toString();
+//            String phoneNumber = etPhoneNumber.getText().toString();
+//            String password = etPassword.getText().toString();
+
+//            UserModel userModel = new UserModel();
+
+//            reference.setValue("First data storage");
 
             loadingDialog.startLoadingDialog();
             Handler handler = new Handler();
@@ -113,6 +141,19 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 }
             });
+
+            //CRUD Realtime Database
+//            database.child("Data").push().setValue(new UserModel(fullname, email, phoneNumber, password)).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                @Override
+//                public void onSuccess(Void unused) {
+//                    Toast.makeText(RegisterActivity.this, "Data tersimpan", Toast.LENGTH_SHORT).show();
+//                }
+//            }).addOnFailureListener(new OnFailureListener() {
+//                @Override
+//                public void onFailure(@NonNull @NotNull Exception e) {
+//                    Toast.makeText(RegisterActivity.this, "Data gagal tersimpan", Toast.LENGTH_SHORT).show();
+//                }
+//            });
 
         }
     }

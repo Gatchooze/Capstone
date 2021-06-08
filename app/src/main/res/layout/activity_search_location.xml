@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:background="@color/blue"
         android:textColor="@color/white"
-        android:text="show bottom sheet" />
+        android:text="@string/showbottomsheet" />
 
     <include layout="@layout/bottom_sheet_maps"/>
 

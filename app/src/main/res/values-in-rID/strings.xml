@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Proyek Capstone</string>
+
+    //LoginActivity
+    <string name="login">Masuk</string>
+    <string name="opening">Masukkan email terdaftar Anda untuk login</string>
+    <string name="email">Email</string>
+    <string name="example">Contoh: johndoe@example.com</string>
+    <string name="password">Kata Sandi</string>
+    <string name="login_google">Masuk dengan Google</string>
+
+    //RegisterActivity
+    <string name="register">Daftar</string>
+    <string name="opening_register">Lengkapi data diri Anda di bawah ini!</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="example_register">Contoh: Nama</string>
+    <string name="phone_number">Nomor Telepon</string>
+    <string name="or">Atau</string>
+    <string name="register_google">Daftar dengan Google</string>
+    <string name="register_account">Ayo Daftar</string>
+
+    <string name="terms_of_service">Dengan login atau mendaftar, Anda menyetujui Persyaratan Layanan dan Kebijakan Privasi.</string>
+    <string name="welcome">Selamat Datang di G-Parking!</string>
+    <string name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="setting">Pengaturan</string>
+    <string name="language">Bahasa</string>
+    <string name="notifications">Notifikasi</string>
+    <string name="search">Pencarian</string>
+    <string name="nearby">Terdekat</string>
+    <string name="x">X</string>
+    <string name="hold_on">Mohon tunggu.</string>
+    <string name="verification">Kami sedang mengirimkan tautan verifikasi Anda. Silahkan cek email Anda...</string>
+    <string name="splashscreen">SplashScreen</string>
+    <string name="mall_parkir">Parkiran Mall</string>
+    <string name="rating_star">4.9/5.0</string>
+    <string name="distance">3.69 km</string>
+    <string name="parking_detail">Detail Parkir</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description_title">Deskripsi</string>
+    <string name="description_fragment">Parkir Basement dan 40 parkir per basement</string>
+    <string name="pricing">Harga</string>
+    <string name="detail_pricing_car">2 jam pertama - Rp. 5000 <br><br>Jam Berikutnya- Rp. 1000/jam.</br></br></string>
+    <string name="book">Pesan</string>
+    <string name="description_motorcycle">Parkir motor di lantai dasar dengan maks. kapasitas 340.</string>
+    <string name="detail_pricing_motor">2 jam pertama - Rp. 2000 <br><br>2 jam pertama - Rp. 2000</br></br></string>
+    <string name="tab_car">Mobil</string>
+    <string name="tab_motorcycle">Motor</string>
+    <string name="title_detail">Atur Kendaraan Plat Nomor Anda</string>
+    <string name="plate_number">Plat Nomor</string>
+    <string name="time">Atur Waktu Kedatangan Anda</string>
+    <string name="parking_position">Atur Posisi Parkir Anda</string>
+    <string name="basement_01">Basement 01</string>
+    <string name="available">Tersedia 3</string>
+    <string name="basement_02">Basement 02</string>
+    <string name="full">Penuh</string>
+    <string name="available_2">Tersedia 25</string>
+    <string name="add_promo_code"><u>Tambah kode promo</u></string>
+
+    <string name="qr_code">QR Code</string>
+    <string name="schedule">Jadwal</string>
+    <string name="schedule_date">Jadwal Tanggal</string>
+    <string name="plate">Plat</string>
+    <string name="random_string">Random String</string>
+    <string name="parking_place">Tempat Parkir</string>
+    <string name="checkin_time">Waktu Check In</string>
+    <string name="booked_on">Dipesan Pada</string>
+    <string name="license_plate">Pelat</string>
+    <string name="next">Selanjutnya</string>
+    <string name="total">Jumlah</string>
+    <string name="balance_1">Saldo 1</string>
+    <string name="detail">Detail</string>
+    <string name="detail_in">Detail Masuk</string>
+    <string name="detail_out">Detail Keluar</string>
+
+    <string name="check_plate_number">Periksa Nomor Plat</string>
+    <string name="payment_method">Cara Pembayaran</string>
+    <string name="balance">Saldo</string>
+    <string name="ovo">Ovo</string>
+    <string name="balance_2">Saldo 2</string>
+    <string name="gopay">Gopay</string>
+    <string name="balance_3">Saldo 3</string>
+    <string name="dana">Dana</string>
+    <string name="balance_4">Saldo 4</string>
+    <string name="pay_now">Bayar Sekarang</string>
+
+    <string name="tab_activity">Aktivitas</string>
+    <string name="tab_history">Riwayat</string>
+
+    //AccountFragment
+    <string name="account_settings">Pengaturan</string>
+    <string name="account_howtouse">Cara Penggunaan</string>
+    <string name="account_languageoption">Opsi Bahasa</string>
+    <string name="account_termsofservice">Persyaratan Layanan</string>
+    <string name="account_privacypolicy">Kebijakan Privasi</string>
+    <string name="account_referralcode">Kode Referensi</string>
+    <string name="account_account">Akun</string>
+    <string name="account_faq">FAQ</string>
+    <string name="account_syncmyewallet">Sinkronkan e-wallet saya</string>
+    <string name="account_helpchat">Bantuan</string>
+    <string name="account_signout">Keluar</string>
+
+    //LanguageActivity
+    <string name="language_changelanguage">Ganti Bahasa</string>
+
+    //BottomNavigation
+    <string name="main_home">Beranda</string>
+    <string name="main_activity">Aktivitas</string>
+    <string name="main_feed">Feed</string>
+    <string name="main_account">Akun</string>
+
+    //SearchLocationActivity
+    <string name="showbottomsheet">Tunjukkan lembar dibawah</string>
+
+</resources>

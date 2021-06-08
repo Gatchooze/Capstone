@@ -32,7 +32,7 @@ public class MallAdapter extends RecyclerView.Adapter<MallAdapter.MallViewHolder
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (MallModel item : mMallListFull) {
-                    if (item.getText2().toLowerCase().contains(filterPattern)) {
+                    if (item.getmRating().toLowerCase().contains(filterPattern)) {
                         filteredList.add(item);
                     }
                 }
@@ -59,17 +59,23 @@ public class MallAdapter extends RecyclerView.Adapter<MallAdapter.MallViewHolder
     }
 
     public static class MallViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTextView1;
-        public TextView mTextView2;
-        public TextView mTextView3;
-        public TextView mTextView4;
+        public TextView mMallName;
+        public TextView mRating;
+        public TextView mCarCapacity;
+        public TextView mMotorCapacity;
+
+//        public TextView mDistance;
+//        public TextView mStatus;
 
         public MallViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
-            mTextView1 = itemView.findViewById(R.id.textView);
-            mTextView2 = itemView.findViewById(R.id.textView2);
-            mTextView3 = itemView.findViewById(R.id.textView3);
-            mTextView4 = itemView.findViewById(R.id.textView4);
+            mMallName = itemView.findViewById(R.id.list_name);
+            mRating = itemView.findViewById(R.id.list_rating);
+            mCarCapacity = itemView.findViewById(R.id.list_car_status);
+            mMotorCapacity = itemView.findViewById(R.id.list_motor_status);
+
+//            mDistance = itemView.findViewById(R.id.distance);
+//            mStatus = itemView.findViewById(R.id.open_close);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -100,10 +106,13 @@ public class MallAdapter extends RecyclerView.Adapter<MallAdapter.MallViewHolder
     public void onBindViewHolder(MallViewHolder holder, int position) {
         MallModel currentItem = dataList.get(position);
 
-        holder.mTextView1.setText(currentItem.getText1());
-        holder.mTextView2.setText(currentItem.getText2());
-        holder.mTextView3.setText(currentItem.getText3());
-        holder.mTextView4.setText(currentItem.getText4());
+        holder.mMallName.setText(currentItem.getmName());
+        holder.mRating.setText(currentItem.getmRating());
+        holder.mCarCapacity.setText(currentItem.getmCarCapacity());
+        holder.mMotorCapacity.setText(currentItem.getmMotorCapacity());
+
+//        holder.mDistance.setText(currentItem.getmDistance());
+//        holder.mStatus.setText(currentItem.getmStatus());
     }
 
     @Override

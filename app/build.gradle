@@ -72,7 +72,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-auth:19.2.0'
 
-    implementation 'com.google.firebase:firebase-database:19.2.0'
+    //Realtime Database
+    implementation 'com.google.firebase:firebase-database:20.0.0'
 
     //Google Maps
     implementation 'com.google.android.gms:play-services-maps:17.0.0'

@@ -4,23 +4,29 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class MallModel implements Parcelable{
-    private String mText1;
-    private String mText2;
-    private String mText3;
-    private String mText4;
+    private String mName;
+    private String mRating;
+    private String mCarCapacity;
+    private String mMotorCapacity;
+    private String mDistance;
+    private String mStatus;
 
-    public MallModel(String text1, String text2, String text3, String text4) {
-        mText1 = text1;
-        mText2 = text2;
-        mText3 = text3;
-        mText4 = text4;
+    public MallModel(String name, String rating, String carCapacity, String motorCapacity, String distance, String status) {
+        mName = name;
+        mRating = rating;
+        mCarCapacity = carCapacity;
+        mMotorCapacity = motorCapacity;
+        mDistance = distance;
+        mStatus = status;
     }
 
     protected MallModel(Parcel in) {
-        mText1 = in.readString();
-        mText2 = in.readString();
-        mText3 = in.readString();
-        mText4 = in.readString();
+        mName = in.readString();
+        mRating = in.readString();
+        mCarCapacity = in.readString();
+        mMotorCapacity = in.readString();
+        mDistance = in.readString();
+        mStatus = in.readString();
     }
 
     public static final Creator<MallModel> CREATOR = new Creator<MallModel>() {
@@ -36,20 +42,28 @@ public class MallModel implements Parcelable{
     };
 
 
-    public String getText1() {
-        return mText1;
+    public String getmName() {
+        return mName;
     }
 
-    public String getText2() {
-        return mText2;
+    public String getmRating() {
+        return mRating;
     }
 
-    public String getText3() {
-        return mText3;
+    public String getmCarCapacity() {
+        return mCarCapacity;
     }
 
-    public String getText4() {
-        return mText4;
+    public String getmMotorCapacity() {
+        return mMotorCapacity;
+    }
+
+    public String getmDistance() {
+        return mDistance;
+    }
+
+    public String getmStatus() {
+        return mStatus;
     }
 
     @Override
@@ -59,9 +73,11 @@ public class MallModel implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(mText1);
-        dest.writeString(mText2);
-        dest.writeString(mText3);
-        dest.writeString(mText4);
+        dest.writeString(mName);
+        dest.writeString(mRating);
+        dest.writeString(mCarCapacity);
+        dest.writeString(mMotorCapacity);
+        dest.writeString(mDistance);
+        dest.writeString(mStatus);
     }
 }

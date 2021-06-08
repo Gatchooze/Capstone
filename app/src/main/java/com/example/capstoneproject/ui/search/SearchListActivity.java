@@ -39,16 +39,16 @@ public class SearchListActivity extends AppCompatActivity {
 
     public void createMallList(){
         dataList = new ArrayList<>();
-        dataList.add(new MallModel("Mall 1", "Rating mall 1", "Car capacity 1", "Motor capacity 1"));
-        dataList.add(new MallModel("Mall 2", "Rating mall 2", "Car capacity 2", "Motor capacity 2"));
-        dataList.add(new MallModel("Mall 3", "Rating mall 3", "Car capacity 3", "Motor capacity 3"));
-        dataList.add(new MallModel("Mall 4", "Rating mall 4", "Car capacity 4", "Motor capacity 4"));
-        dataList.add(new MallModel("Mall 5", "Rating mall 5", "Car capacity 5", "Motor capacity 5"));
-        dataList.add(new MallModel("Mall 6", "Rating mall 6", "Car capacity 6", "Motor capacity 6"));
-        dataList.add(new MallModel("Mall 7", "Rating mall 7", "Car capacity 7", "Motor capacity 7"));
-        dataList.add(new MallModel("Mall 8", "Rating mall 8", "Car capacity 8", "Motor capacity 8"));
-        dataList.add(new MallModel("Mall 9", "Rating mall 9", "Car capacity 9", "Motor capacity 9"));
-        dataList.add(new MallModel("Mall 10", "Rating mall 10", "Car capacity 10", "Motor capacity 10"));
+        dataList.add(new MallModel("Mall 1", "Rating mall 1", "Car capacity 1", "Motor capacity 1", "3,69", "open"));
+        dataList.add(new MallModel("Mall 2", "Rating mall 2", "Car capacity 2", "Motor capacity 2", "3,61", "open"));
+        dataList.add(new MallModel("Mall 3", "Rating mall 3", "Car capacity 3", "Motor capacity 3", "3,62", "close"));
+        dataList.add(new MallModel("Mall 4", "Rating mall 4", "Car capacity 4", "Motor capacity 4", "3,63", "open"));
+        dataList.add(new MallModel("Mall 5", "Rating mall 5", "Car capacity 5", "Motor capacity 5", "3,64", "open"));
+        dataList.add(new MallModel("Mall 6", "Rating mall 6", "Car capacity 6", "Motor capacity 6", "3,65", "open"));
+        dataList.add(new MallModel("Mall 7", "Rating mall 7", "Car capacity 7", "Motor capacity 7", "3,66", "close"));
+        dataList.add(new MallModel("Mall 8", "Rating mall 8", "Car capacity 8", "Motor capacity 8", "3,67", "close"));
+        dataList.add(new MallModel("Mall 9", "Rating mall 9", "Car capacity 9", "Motor capacity 9", "3,68", "open"));
+        dataList.add(new MallModel("Mall 10", "Rating mall 10", "Car capacity 10", "Motor capacity 10", "3,60", "close"));
     }
 
     public void buildRecylerView() {
@@ -60,14 +60,14 @@ public class SearchListActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mMallAdapter);
 
-//        mMallAdapter.setOnItemClickListener(new MallAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(int position) {
-//                Intent intent = new Intent(SearchListActivity.this, CarParkDetailActivity.class);
-//                intent.putExtra("Mall Item", dataList.get(position));
-//                startActivity(intent);
-//            }
-//        });
+        mMallAdapter.setOnItemClickListener(new MallAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(SearchListActivity.this, CarParkDetailActivity.class);
+                intent.putExtra("Mall Item", dataList.get(position));
+                startActivity(intent);
+            }
+        });
 
     }
 
