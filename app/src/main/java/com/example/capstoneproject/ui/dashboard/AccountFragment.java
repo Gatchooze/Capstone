@@ -18,7 +18,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.capstoneproject.R;
 import com.example.capstoneproject.ui.account.SettingAccountActivity;
+import com.example.capstoneproject.ui.account.SettingHowToUseActivity;
 import com.example.capstoneproject.ui.account.SettingLanguageActivity;
+import com.example.capstoneproject.ui.account.SettingTermsServiceActivity;
 import com.example.capstoneproject.ui.login.LoginActivity;
 //import com.google.android.gms.auth.api.signin.SignInAccount;
 //import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -37,7 +39,7 @@ import com.google.firebase.database.ValueEventListener;
 import org.jetbrains.annotations.NotNull;
 
 public class AccountFragment extends Fragment {
-    ImageButton imageButton, btnLanguage;
+    ImageButton imageButton, btnLanguage, btnHowToUse, btnTerms;
 
     Button btnLogout;
 
@@ -66,6 +68,8 @@ public class AccountFragment extends Fragment {
         imageButton = view.findViewById(R.id.btn_edit);
         btnLogout = view.findViewById(R.id.btn_signout);
         btnLanguage = view.findViewById(R.id.btn_languageoption);
+        btnHowToUse = view.findViewById(R.id.btn_howtouse);
+        btnTerms = view.findViewById(R.id.btn_termofservice);
         tvFullName = view.findViewById(R.id.tv_full_name);
         tvPhoneNumber = view.findViewById(R.id.tv_phone_number);
         tvEmail = view.findViewById(R.id.tv_email);
@@ -141,6 +145,23 @@ public class AccountFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        btnHowToUse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SettingHowToUseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnTerms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SettingTermsServiceActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override

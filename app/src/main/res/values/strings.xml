@@ -112,4 +112,52 @@
     //SearchLocationActivity
     <string name="showbottomsheet">Show bottom sheet</string>
 
+    //SettingHowToUseActivity
+    <string name="title_search">Find parking location</string>
+    <string name="description_search">
+        1. Use the search menu.
+        2. A list of malls that provide parking will appear. In addition, you can search for parking spaces based on nearby locations by clicking the blue button next to the search menu.
+        3. Select a parking location.
+    </string>
+
+    <string name="title_payment">Make a Payment</string>
+    <string name="description_payment">
+        1. Use the barcode obtained after filling in the booking data then scan it.
+        2. Select the payment method you want.
+        3. Click pay now.
+    </string>
+
+
+    //SettingTermsServiceActivity
+    <string name="title_terms">TERMS FOR USING THE APPLICATION</string>
+    <string name="description_terms">
+        You represent and warrant that you are an individual legally entitled to enter into a
+        binding agreement under the laws of the Republic of Indonesia, in particular the Terms of
+        Use, to use the Application and that you are at least 21 years old or have ever been married
+        and not under guardianship. Otherwise, we or the relevant Service Provider, will be entitled
+        by law to cancel any agreement entered into with you. You further represent and warrant that
+        you have the right, authority and capacity to use the Service and to abide by the Terms of
+        Use. You can only use the Application once you have signed up with it. Upon successfully
+        signing up, the Application will provide you with a personal account that can be accessed
+        with a password you choose.
+    </string>
+
+    <string name="title_terms_payment">PAYMENT</string>
+    <string name="description_terms_payment">
+        The download and/or use of the Application is free of charge. We may introduce fees for the
+        download and/or use of the Application at times. We will inform you accordingly about this
+        for you to decide whether you wish to continue using the Application or not. However, the
+        Internet connection required to use the Service, and any associated charges (e.g. mobile
+        data expenses) incurred by your use of the Service are your exclusive responsibility and
+        made solely at your expense.
+    </string>
+
+    <string name="title_right">INTELLECTUAL PROPERTY MATTERS</string>
+    <string name="description_right">
+        G-Parking, including its name and logo, the Application and the Service, is protected by
+        copyright, trademark and other rights provided under the laws of the Republic of Indonesia.
+        We (and our licensors, if applicable) exclusively own all rights, title and interest in and
+        to the Application, including all associated intellectual property rights.
+    </string>
+
 </resources>

@@ -19,6 +19,11 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCW3yuGMl3I9-TY_9ZpEose28_zIk03eOI" />
 
+        <activity android:name=".ui.account.SettingTermsServiceActivity"
+            android:parentActivityName=".ui.main.MainActivity" />
+        <activity
+            android:name=".ui.account.SettingHowToUseActivity"
+            android:parentActivityName=".ui.main.MainActivity" />
         <activity
             android:name=".ui.account.SettingLanguageActivity"
             android:parentActivityName=".ui.main.MainActivity" />

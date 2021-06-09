@@ -113,4 +113,51 @@
     //SearchLocationActivity
     <string name="showbottomsheet">Tunjukkan lembar dibawah</string>
 
+    //SettingHowToUseActivity
+    <string name="title_search">Temukan lokasi parkir</string>
+    <string name="description_search">
+        1. Gunakan menu pencarian.
+        2. Daftar mall yang menyediakan parkir akan muncul. Selain itu, Anda dapat mencari tempat parkir berdasarkan lokasi terdekat dengan mengklik tombol biru di sebelah menu pencarian.
+        3. Pilih lokasi parkir.
+    </string>
+
+    <string name="title_payment">Melakukan Pembayaran</string>
+    <string name="description_payment">
+        1. Gunakan barcode yang didapat setelah mengisi data booking kemudian lakukan scan.
+        2. Pilih metode pembayaran yang Anda inginkan.
+        3. Klik bayar sekarang.
+    </string>
+
+    //SettingTermsServiceActivity
+    <string name="title_terms">SYARAT UNTUK MENGGUNAKAN APLIKASI</string>
+    <string name="description_terms">
+        Anda menyatakan dan menjamin bahwa Anda adalah individu yang secara hukum berhak untuk masuk
+        ke dalam a perjanjian yang mengikat berdasarkan hukum Negara Republik Indonesia, khususnya
+        Syarat-Syarat Gunakan, untuk menggunakan Aplikasi dan bahwa Anda berusia minimal 21 tahun
+        atau pernah menikah dan tidak di bawah perwalian. Jika tidak, kami atau Penyedia Layanan
+        terkait, akan berhak oleh hukum untuk membatalkan perjanjian yang dibuat dengan Anda. Anda
+        selanjutnya menyatakan dan menjamin bahwa Anda memiliki hak, wewenang, dan kapasitas untuk
+        menggunakan Layanan dan untuk mematuhi Ketentuan Menggunakan. Anda hanya dapat menggunakan
+        Aplikasi setelah Anda mendaftar. Setelah berhasil mendaftar, Aplikasi akan memberi Anda akun
+        pribadi yang dapat diakses dengan kata sandi yang Anda pilih.
+    </string>
+
+    <string name="title_terms_payment">PEMBAYARAN</string>
+    <string name="description_terms_payment">
+        Pengunduhan dan/atau penggunaan Aplikasi tidak dikenai biaya. Kami dapat mengenakan biaya
+        untuk pengunduhan dan/atau penggunaan Aplikasi sewaktu-waktu. Kami akan memberi tahu Anda
+        tentang hal ini agar Anda dapat memutuskan apakah Anda ingin terus menggunakan Aplikasi atau
+        tidak. Namun, koneksi Internet yang diperlukan untuk menggunakan Layanan, dan setiap biaya
+        terkait (misalnya biaya data seluler) yang ditimbulkan oleh penggunaan Layanan oleh Anda
+        adalah tanggung jawab eksklusif Anda dan dilakukan semata-mata atas biaya Anda.
+    </string>
+
+    <string name="title_right">MASALAH KEKAYAAN INTELEKTUAL</string>
+    <string name="description_right">
+        G-Parking, termasuk nama dan logonya, Aplikasi dan Layanan, dilindungi oleh hak cipta, merek
+        dagang dan hak-hak lain yang diatur berdasarkan hukum Negara Republik Indonesia. Kami (dan
+        pemberi lisensi kami, jika berlaku) secara eksklusif memiliki semua hak, kepemilikan, dan
+        kepentingan dalam dan ke Aplikasi, termasuk semua hak kekayaan intelektual terkait.
+    </string>
+
 </resources>
