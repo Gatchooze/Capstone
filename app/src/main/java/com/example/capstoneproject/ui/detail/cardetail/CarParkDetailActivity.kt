@@ -2,6 +2,7 @@ package com.example.capstoneproject.ui.detail.cardetail
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
@@ -35,6 +36,10 @@ class CarParkDetailActivity : AppCompatActivity() {
         binding = ActivityCarParkDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.mToolbar)
+        supportActionBar?.title = ""
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val intent = intent
         val mallModel: MallModel? = intent.getParcelableExtra("Mall Item")
 
@@ -64,9 +69,9 @@ class CarParkDetailActivity : AppCompatActivity() {
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
 
-        val button: Button = findViewById(R.id.btn_book_car)
+//        val button: Button = findViewById(R.id.btn_book_car)
 
-        button.setOnClickListener {
+        /*button.setOnClickListener {
             val bottomSheetDialog = BottomSheetDialog(
                 this@CarParkDetailActivity, R.style.BottomSheetDialogTheme
             )
@@ -82,10 +87,20 @@ class CarParkDetailActivity : AppCompatActivity() {
 
             bottomSheetDialog.setContentView(bottomSheetView)
             bottomSheetDialog.show()
-        }
+        }*/
 
-        binding.imgBackIcon.setOnClickListener {
+        /*binding.imgBackIcon.setOnClickListener {
             onBackPressed()
+        }*/
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
         }
+        return super.onOptionsItemSelected(item)
     }
 }

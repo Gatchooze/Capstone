@@ -160,4 +160,18 @@
         to the Application, including all associated intellectual property rights.
     </string>
 
+    <string name="label_license_plate_number">Set Your License Plate Vehicle</string>
+    <string name="label_arrival_time">Set Your Arrival Time</string>
+    <string name="label_time_separator">:</string>
+    <string name="label_arrival_date">Set Your Arrival Date</string>
+    <string name="label_parking_position">Set Your Parking Position</string>
+    <string name="action_next">Next</string>
+    <string name="hint_booking_date">mm/dd/yyyy, Day</string>
+    <string name="hint_license_plate">ex. B1234ASD</string>
+    <string name="error_license_plate">Your license doesn\'t match pattern</string>
+    <string name="hint_00">00</string>
+    <string name="label_am_pm">AM</string>
+    <string name="label_select_date">Please set your date</string>
+    <string name="label_select_time">Please set your time</string>
+
 </resources>

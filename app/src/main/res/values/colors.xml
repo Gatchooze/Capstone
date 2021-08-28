@@ -8,11 +8,15 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#29B6F6</color>
+    <color name="lighter_blue">#5CBDEA</color>
+    <color name="darker_blue">#107CAE</color>
 
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#29B6F6</color>
+    <color name="colorLighterGrey">#E7E9ED</color>
     <color name="colorGrey">#CACCCF</color>
+    <color name="colorDarkerGrey">#A3A5A8</color>
     <color name="colorGreen">#31B057</color>
     <color name="colorRed">#D73A49</color>
 

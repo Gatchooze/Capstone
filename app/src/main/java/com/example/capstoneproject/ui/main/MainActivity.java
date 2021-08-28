@@ -51,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_activity:
                     selectedFragment = new ActivityFragment();
                     break;
-                case R.id.nav_feed:
-                    selectedFragment = new FeedFragment();
-                    break;
                 case R.id.nav_account:
                     selectedFragment = new AccountFragment();
                     break;

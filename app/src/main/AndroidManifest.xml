@@ -14,12 +14,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CapstoneProject">
+        <activity
+            android:name=".ui.booking.BookingDetailActivity"
+            android:exported="true" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCW3yuGMl3I9-TY_9ZpEose28_zIk03eOI" />
 
-        <activity android:name=".ui.account.SettingTermsServiceActivity"
+        <activity
+            android:name=".ui.account.SettingTermsServiceActivity"
             android:parentActivityName=".ui.main.MainActivity" />
         <activity
             android:name=".ui.account.SettingHowToUseActivity"
@@ -32,7 +36,9 @@
             android:parentActivityName=".ui.main.MainActivity" /> <!-- android:theme="@style/Theme.AppCompat.NoActionBar"/> -->
         <activity android:name=".ui.search.SearchLocationActivity" />
         <activity android:name=".ui.search.SearchListActivity" />
-        <activity android:name=".ui.detail.cardetail.CarParkDetailActivity" />
+        <activity
+            android:name=".ui.detail.cardetail.CarParkDetailActivity"
+            android:theme="@style/Theme.CapstoneProject.NoActionBar" />
         <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
