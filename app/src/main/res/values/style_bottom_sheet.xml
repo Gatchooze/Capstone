@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CapstoneBottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CapstoneBottomSheet</item>
+        <item name="materialButtonStyle">@style/CapstoneButtonContained</item>
+        <item name="materialButtonOutlinedStyle">@style/CapstoneButtonOutlined</item>
+    </style>
+
+    <style name="CapstoneBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CapstoneBottomSheetShape</item>
+        <item name="shapeAppearance">@style/CapstoneBottomSheetShape</item>
+    </style>
+
+    <style name="CapstoneBottomSheetShape" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">15dp</item>
+        <item name="cornerSizeTopRight">15dp</item>
+    </style>
+
+</resources>

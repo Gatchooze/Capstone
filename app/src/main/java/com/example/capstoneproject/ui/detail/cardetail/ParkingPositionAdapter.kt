@@ -8,6 +8,7 @@ import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.ItemParkingPositionBinding
 import com.example.capstoneproject.databinding.ItemParkingPositionSelectedBinding
 import com.example.capstoneproject.model.ItemParkingPosition
+import com.example.capstoneproject.utils.getSpannableString
 import com.google.android.material.textview.MaterialTextView
 
 class ParkingPositionAdapter(
@@ -19,12 +20,16 @@ class ParkingPositionAdapter(
         fun bind(itemParkingPosition: ItemParkingPosition) {
             with(itemView) {
                 val tvItemParkingPositionLocation =
-                    itemView.findViewById<MaterialTextView>(R.id.tvItemParkingPositionLocation)
+                findViewById<MaterialTextView>(R.id.tvItemParkingPositionLocation)
                 val tvItemParkingPositionStatus =
-                    itemView.findViewById<MaterialTextView>(R.id.tvItemParkingPositionStatus)
-                itemParkingPosition.initStatus(context)
-                tvItemParkingPositionLocation.text = itemParkingPosition.location
-                tvItemParkingPositionStatus.text = itemParkingPosition.status
+                findViewById<MaterialTextView>(R.id.tvItemParkingPositionStatus)
+                tvItemParkingPositionLocation.text = itemParkingPosition.name
+                tvItemParkingPositionStatus.text = if(itemParkingPosition.isFull){
+                    getSpannableString("Full", context, R.color.colorRed)
+                }else{
+                    val value = "${itemParkingPosition.max - itemParkingPosition.occupied} Available"
+                    getSpannableString(value, context, R.color.colorGreen)
+                }
             }
         }
     }
@@ -37,9 +42,9 @@ class ParkingPositionAdapter(
                     itemView.findViewById<MaterialTextView>(R.id.tvItemParkingPositionLocation)
                 val tvItemParkingPositionStatus =
                     itemView.findViewById<MaterialTextView>(R.id.tvItemParkingPositionStatus)
-                itemParkingPosition.initStatus(context)
-                tvItemParkingPositionLocation.text = itemParkingPosition.location
-                tvItemParkingPositionStatus.text = itemParkingPosition.status
+                tvItemParkingPositionLocation.text = itemParkingPosition.name
+                val value = "${itemParkingPosition.max - itemParkingPosition.occupied} Available"
+                tvItemParkingPositionStatus.text = getSpannableString(value, context, R.color.colorGreen)
             }
         }
     }
@@ -114,15 +119,18 @@ class ParkingPositionAdapter(
         binding = null
     }
 
-    fun addSelectedPositionListener(selectedPositionListener: SelectedPositionListener){
+    fun addSelectedPositionListener(selectedPositionListener: SelectedPositionListener) {
         this.selectedPositionListener = selectedPositionListener
     }
 
-    fun removeSelectedPositionListener(){
+    fun removeSelectedPositionListener() {
         selectedPositionListener = null
     }
 
-    fun interface SelectedPositionListener{
+    fun getCurrentItemLocation(): String =
+        dataList[currentPosition].name
+
+    fun interface SelectedPositionListener {
         fun onPositionChange(position: Int)
     }
 }

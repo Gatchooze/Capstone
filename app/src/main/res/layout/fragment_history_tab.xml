@@ -4,32 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.viewpager.HistoryFragment">
+    tools:context=".ui.dashboard.viewpager.HistoryTabFragment">
 
-    <ImageView
-        android:id="@+id/img_history"
-        android:layout_width="253dp"
-        android:layout_height="173dp"
-        android:src="@drawable/ic_history"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.358" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistoryTab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/items_activity"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:visibility="gone"/>
 
-    <TextView
-        android:id="@+id/txt_history"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvHistoryTabEmpty"
         android:layout_width="242dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="You have no previous \ntransactions"
         android:textColor="@color/black"
         android:textSize="24sp"
+        app:drawableTopCompat="@drawable/ic_history"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:drawablePadding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_history"
-        app:layout_constraintVertical_bias="0.12" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

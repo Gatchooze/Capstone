@@ -24,10 +24,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.installations.remote.TokenResult;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -36,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button btnRegister, btnRegisterGoogle;
 
     FirebaseAuth auth;
+    FirebaseDatabase database;
 
     //Realtime Database
 //    FirebaseDatabase rootNode;
@@ -67,6 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         //Firebase Instance
         auth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
 
         btnRegister.setOnClickListener((v) -> {
             valid();
@@ -134,26 +139,27 @@ public class RegisterActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-                        finish();
+                        String uid = auth.getUid();
+                        database.getReference().child("users").child(uid + "").setValue(new UserModel(fullname, email, phoneNumber, password)).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(RegisterActivity.this, "Data tersimpan", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                                finish();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull @NotNull Exception e) {
+                                Toast.makeText(RegisterActivity.this, "Data gagal tersimpan", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     } else {
                         Toast.makeText(RegisterActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });
 
-            //CRUD Realtime Database
-//            database.child("Data").push().setValue(new UserModel(fullname, email, phoneNumber, password)).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                @Override
-//                public void onSuccess(Void unused) {
-//                    Toast.makeText(RegisterActivity.this, "Data tersimpan", Toast.LENGTH_SHORT).show();
-//                }
-//            }).addOnFailureListener(new OnFailureListener() {
-//                @Override
-//                public void onFailure(@NonNull @NotNull Exception e) {
-//                    Toast.makeText(RegisterActivity.this, "Data gagal tersimpan", Toast.LENGTH_SHORT).show();
-//                }
-//            });
+//            CRUD Realtime Database
 
         }
     }

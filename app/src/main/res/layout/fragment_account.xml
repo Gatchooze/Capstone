@@ -18,7 +18,7 @@
             android:src="@mipmap/ic_launcher" />
 
         <LinearLayout
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="10dp">
@@ -62,15 +62,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/profile"
-        android:orientation="vertical"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/account_settings"
             android:textSize="15sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,10 +83,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:src="@drawable/howtouse"/>
+                android:src="@drawable/howtouse" />
 
             <TextView
-                android:layout_width="344dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:text="@string/account_howtouse"
@@ -98,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:src="@drawable/ic_next"/>
+                android:src="@drawable/ic_next" />
         </LinearLayout>
 
         <LinearLayout
@@ -112,10 +112,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:src="@drawable/languageoption"/>
+                android:src="@drawable/languageoption" />
 
             <TextView
-                android:layout_width="344dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:text="@string/account_languageoption"
@@ -127,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:src="@drawable/ic_next"/>
+                android:src="@drawable/ic_next" />
         </LinearLayout>
 
         <LinearLayout
@@ -141,10 +141,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:src="@drawable/termofservice"/>
+                android:src="@drawable/termofservice" />
 
             <TextView
-                android:layout_width="344dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:text="@string/account_termsofservice"
@@ -156,7 +156,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:src="@drawable/ic_next"/>
+                android:src="@drawable/ic_next" />
         </LinearLayout>
 
         <LinearLayout
@@ -170,10 +170,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:src="@drawable/privacypolicy"/>
+                android:src="@drawable/privacypolicy" />
 
             <TextView
-                android:layout_width="344dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:text="@string/account_privacypolicy"
@@ -185,7 +185,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:src="@drawable/ic_next"/>
+                android:src="@drawable/ic_next" />
         </LinearLayout>
 
         <LinearLayout
@@ -199,10 +199,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:src="@drawable/referralcode"/>
+                android:src="@drawable/referralcode" />
 
             <TextView
-                android:layout_width="344dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:text="@string/account_referralcode"
@@ -214,7 +214,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:src="@drawable/ic_next"/>
+                android:src="@drawable/ic_next" />
         </LinearLayout>
 
     </LinearLayout>
@@ -248,7 +248,7 @@
                 android:src="@drawable/faq"/>
 
             <TextView
-                android:layout_width="344dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:text="@string/account_faq"
@@ -277,7 +277,7 @@
                 android:src="@drawable/syncmyewallet"/>
 
             <TextView
-                android:layout_width="344dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:text="@string/account_syncmyewallet"
@@ -306,7 +306,7 @@
                 android:src="@drawable/helpchat"/>
 
             <TextView
-                android:layout_width="344dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
                 android:text="@string/account_helpchat"
@@ -327,11 +327,11 @@
         android:id="@+id/btn_signout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/account_signout"
         android:layout_below="@+id/account"
         android:layout_marginTop="35dp"
         android:background="@drawable/custom_button3"
-        android:textColor="#D73A49"
-        android:textAllCaps="false" />
+        android:text="@string/account_signout"
+        android:textAllCaps="false"
+        android:textColor="#D73A49" />
 
 </RelativeLayout>

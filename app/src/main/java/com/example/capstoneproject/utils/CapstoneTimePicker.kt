@@ -36,8 +36,8 @@ class CapstoneTimePicker private constructor(
 
     private val onPositiveButtonClickListener = View.OnClickListener {
         onTimeRetrievedCallBack?.onTimeRetrieved(
-            Pair(materialTimePicker.hour-12, materialTimePicker.minute),
-            if(materialTimePicker.hour > 11) "PM" else "AM"
+            Pair(materialTimePicker.hour, materialTimePicker.minute),
+            if (materialTimePicker.hour > 11) "PM" else "AM"
         )
     }
 

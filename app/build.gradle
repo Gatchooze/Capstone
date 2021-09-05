@@ -71,10 +71,10 @@ dependencies {
     //Login Firebase
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.firebase:firebase-auth'
 
     //Realtime Database
-    implementation 'com.google.firebase:firebase-database:20.0.0'
+    implementation 'com.google.firebase:firebase-database'
 
     //Google Maps
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
@@ -83,4 +83,7 @@ dependencies {
     //Coroutine Flow
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+
+    //Gson
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 }

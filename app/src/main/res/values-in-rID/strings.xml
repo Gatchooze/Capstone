@@ -159,5 +159,22 @@
         pemberi lisensi kami, jika berlaku) secara eksklusif memiliki semua hak, kepemilikan, dan
         kepentingan dalam dan ke Aplikasi, termasuk semua hak kekayaan intelektual terkait.
     </string>
+    <string name="label_license_plate_number">Masukkan Plat Nomor Kendaraan</string>
+    <string name="label_arrival_time">Masukkan Waktu Kedatangan</string>
+    <string name="label_arrival_date">Masukkan Tanggal Kedatangan</string>
+    <string name="label_parking_position">Tentukan Posisi Parkir</string>
+    <string name="action_next">Lanjut</string>
+    <string name="hint_booking_date">jj/bb/tttt, Hari</string>
+    <string name="hint_license_plate">cth. B1234ASD</string>
+    <string name="error_license_plate">Plat Nomor Kendaraan Tidak Cocok Denga Pola</string>
+    <string name="label_select_date">Pilih tanggal</string>
+    <string name="label_select_time">Pilih waktu</string>
+    <string name="action_ticket">TIket</string>
+    <string name="label_check_in_time">Waktu Masuk</string>
+    <string name="label_booked_on">Dipesan Pada</string>
+    <string name="label_license_plate">Plat Nomor</string>
+    <string name="action_end_book">Akhiri Pesanan</string>
+    <string name="you_cant_order_in_past">Kamu Tidak Bisa Memesan di Waktu Lampau</string>
+    <string name="failed_to_booking">Gagal Untuk Memesan</string>
 
 </resources>
