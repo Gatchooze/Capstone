@@ -1,5 +1,6 @@
 package com.example.capstoneproject.firebase
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.capstoneproject.firebase.entity.FirebaseBooking
@@ -44,7 +45,9 @@ class FirebaseService private constructor() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-
+                error.toException().let{ err ->
+                    Log.d("FirebaseService", error.message, err)
+                }
             }
 
         })
@@ -66,7 +69,9 @@ class FirebaseService private constructor() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-
+                error.toException().let{ err ->
+                    Log.d("FirebaseService", error.message, err)
+                }
             }
 
         })
@@ -91,7 +96,20 @@ class FirebaseService private constructor() {
         })*/
         setValue(booking.toFirebaseBooking()).addOnSuccessListener {
             isSuccess.postValue(true)
-        }.addOnFailureListener {
+        }.addOnFailureListener { error ->
+            Log.d("FirebaseService", error.message, error)
+            isSuccess.postValue(false)
+        }
+
+        return isSuccess
+    }
+
+    fun deleteBooking(uid: String, id: String): LiveData<Boolean>{
+        val isSuccess = MutableLiveData<Boolean>()
+        database.child("booking").child(uid).child(id).removeValue().addOnSuccessListener {
+            isSuccess.postValue(true)
+        }.addOnFailureListener { error ->
+            Log.d("FirebaseService", error.message, error)
             isSuccess.postValue(false)
         }
 
@@ -109,7 +127,9 @@ class FirebaseService private constructor() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-
+                error.toException().let{ err ->
+                    Log.d("FirebaseService", error.message, err)
+                }
             }
 
         })
@@ -117,8 +137,20 @@ class FirebaseService private constructor() {
         return booking
     }
 
-    fun patchBooking(booking: Booking) =
-        database.child("booking").child(booking.uid).child(booking.id).setValue(booking.toFirebaseBooking())
+    fun patchBooking(booking: Booking): LiveData<Boolean> {
+        val isSuccess = MutableLiveData<Boolean>()
+
+        database.child("booking").child(booking.uid).child(booking.id).setValue(booking.toFirebaseBooking()).addOnSuccessListener {
+            isSuccess.postValue(true)
+        }.addOnFailureListener { error ->
+            error.message?.let { msg ->
+                Log.d("FirebaseService", msg, error)
+            }
+            isSuccess.postValue(false)
+        }
+
+        return isSuccess
+    }
 
     fun getMyBookings(uid: String, isDone: Boolean): LiveData<List<Pair<String, FirebaseBooking>>>{
         val result = MutableLiveData<List<Pair<String, FirebaseBooking>>>()
@@ -137,7 +169,9 @@ class FirebaseService private constructor() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-
+                error.toException().let{ err ->
+                    Log.d("FirebaseService", error.message, err)
+                }
             }
         })
 
@@ -155,7 +189,9 @@ class FirebaseService private constructor() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-
+                error.toException().let{ err ->
+                    Log.d("FirebaseService", error.message, err)
+                }
             }
 
         })
@@ -180,7 +216,9 @@ class FirebaseService private constructor() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-
+                error.toException().let{ err ->
+                    Log.d("FirebaseService", error.message, err)
+                }
             }
 
         })

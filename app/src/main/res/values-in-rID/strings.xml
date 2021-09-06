@@ -176,5 +176,8 @@
     <string name="action_end_book">Akhiri Pesanan</string>
     <string name="you_cant_order_in_past">Kamu Tidak Bisa Memesan di Waktu Lampau</string>
     <string name="failed_to_booking">Gagal Untuk Memesan</string>
+    <string name="cancel">Cancel</string>
+    <string name="failed_to_end_book">Gagal untuk mengakhiri pesanan</string>
+    <string name="failed_to_cancel_book">Gagal untuk membatalkan pesanan</string>
 
 </resources>

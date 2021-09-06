@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
+import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.FragmentEndBookConfirmBinding
 import com.example.capstoneproject.model.Booking
 import com.example.capstoneproject.ui.detail.cardetail.BookingFragment.Companion.EXTRA_BOOKING
@@ -78,8 +80,13 @@ class EndBookConfirmFragment : BottomSheetDialogFragment() {
                     bookingViewModel.patchBooking(b.apply {
                         isDone = true
                         dateOut = this@EndBookConfirmFragment.dateOut
-                    })
-                    MainActivity.start(requireContext())
+                    }).observe(viewLifecycleOwner){ isSuccess ->
+                        if(isSuccess){
+                            MainActivity.start(requireContext())
+                        }else{
+                            Toast.makeText(requireContext(), getString(R.string.failed_to_end_book), Toast.LENGTH_SHORT).show()
+                        }
+                    }
                 }
             }
         }

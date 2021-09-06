@@ -15,8 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:menu="@menu/side_menu2"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp">
+            android:padding="16dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="250dp"
@@ -53,22 +52,32 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="20dp">
+            android:orientation="vertical">
 
-            <androidx.viewpager2.widget.ViewPager2
+            l<androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/vp_carousel"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="160dp"
                 android:layout_marginBottom="12dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@color/blue"
                 android:overScrollMode="never"
-                app:layout_constraintBottom_toTopOf="@id/tvHomeLabelLatest"
+                app:layout_constraintBottom_toTopOf="@id/indicators_container"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0"
                 app:layout_constraintVertical_chainStyle="packed" />
+
+            <LinearLayout
+                android:id="@+id/indicators_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/vp_carousel"
+                app:layout_constraintBottom_toTopOf="@id/tvHomeLabelLatest" />
 
             <TextView
                 android:id="@+id/tvHomeLabelLatest"
@@ -85,7 +94,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/vp_carousel" />
+                app:layout_constraintTop_toBottomOf="@id/indicators_container" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/mcvHomeLatest"

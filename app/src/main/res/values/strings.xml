@@ -182,5 +182,8 @@
     <string name="label_detail" translatable="false">Detail</string>
     <string name="you_cant_order_in_past">You can\'t order in the past</string>
     <string name="failed_to_booking">Failed to booking</string>
+    <string name="cancel">Cancel</string>
+    <string name="failed_to_end_book">Failed to end book</string>
+    <string name="failed_to_cancel_book">Failed to cancel Book</string>
 
 </resources>

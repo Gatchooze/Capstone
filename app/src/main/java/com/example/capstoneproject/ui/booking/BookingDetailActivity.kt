@@ -4,9 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.core.view.isGone
+import com.example.capstoneproject.R
 import com.example.capstoneproject.databinding.ActivityBookingDetailBinding
 import com.example.capstoneproject.model.Booking
 import com.example.capstoneproject.model.BookingQuery
@@ -136,6 +138,20 @@ class BookingDetailActivity : AppCompatActivity() {
                         supportFragmentManager,
                         EndBookConfirmFragment.END_BOOK_CONFIRM_FRAGMENT
                     )
+                }
+            }
+            btnBookingDetailCancel.setOnClickListener {
+                booking?.let { b ->
+                    uid?.let { uid ->
+                        bookingViewModel.deleteBooking(uid, b.id).observe(this@BookingDetailActivity){ isSuccess ->
+                            if(isSuccess){
+                                onBackPressed()
+                            }else{
+                                Toast.makeText(this@BookingDetailActivity, getString(R.string.failed_to_cancel_book), Toast.LENGTH_SHORT)
+                                    .show()
+                            }
+                        }
+                    }
                 }
             }
         }

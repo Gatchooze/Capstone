@@ -49,6 +49,9 @@ class Repository private constructor(private val firebaseService: FirebaseServic
     fun patchBooking(booking: Booking) =
         firebaseService.patchBooking(booking)
 
+    fun deleteBooking(uid: String, id: String) =
+        firebaseService.deleteBooking(uid, id)
+
     fun getMyBooking(uid: String, isDone: Boolean): LiveData<List<Booking>> =
         Transformations.map(firebaseService.getMyBookings(uid, isDone)){
             val list = mutableListOf<Booking>()

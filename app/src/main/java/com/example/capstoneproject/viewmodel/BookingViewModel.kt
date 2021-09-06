@@ -40,6 +40,9 @@ class BookingViewModel private constructor(private val repository: Repository) :
     fun patchBooking(booking: Booking) =
         repository.patchBooking(booking)
 
+    fun deleteBooking(uid: String, id: String) =
+        repository.deleteBooking(uid, id)
+
     fun getMyBooking(uid: String, isDone: Boolean) =
         repository.getMyBooking(uid, isDone)
 

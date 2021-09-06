@@ -8,11 +8,14 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.capstoneproject.R;
 import com.example.capstoneproject.databinding.FragmentHomeBinding;
@@ -24,6 +27,7 @@ import com.example.capstoneproject.viewmodel.BookingViewModel;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
@@ -34,6 +38,7 @@ public class HomeFragment extends Fragment {
     @Nullable
     FragmentHomeBinding binding = null;
     BookingViewModel bookingViewModel = BookingViewModel.getInstance();
+    AdAdapter adAdapter = new AdAdapter();
 
     @Nullable
     @Override
@@ -90,6 +95,44 @@ public class HomeFragment extends Fragment {
 
             activity.setSupportActionBar(binding.tbHome);
             Objects.requireNonNull(activity.getSupportActionBar()).setTitle("");
+
+            binding.vpCarousel.setAdapter(adAdapter);
+            setupIndicators();
+            setCurrentIndicator(0);
+            binding.vpCarousel.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+                @Override
+                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                    super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+                    setCurrentIndicator(position);
+                }
+            });
+        }
+    }
+
+    private void setCurrentIndicator(int index) {
+        if(binding != null){
+            LinearLayout indicatorsContainer = binding.indicatorsContainer;
+            int count = indicatorsContainer.getChildCount();
+            for(int i = 0; i < count; i++){
+                ImageView imageView = (ImageView) indicatorsContainer.getChildAt(i);
+                if(i == index){
+                    imageView.setImageResource(R.drawable.indicator_inactive);
+                }else {
+                    imageView.setImageResource(R.drawable.indicator_active);
+                }
+            }
+        }
+    }
+
+    private void setupIndicators() {
+        ArrayList<ImageView> indicators = new ArrayList<>();
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(8, 0, 8, 0);
+        for(int i=0; i < adAdapter.getItemCount(); i++){
+            indicators.add(new ImageView(requireContext().getApplicationContext()));
+            indicators.get(i).setImageResource(R.drawable.indicator_inactive);
+            indicators.get(i).setLayoutParams(layoutParams);
+            Objects.requireNonNull(binding).indicatorsContainer.addView(indicators.get(i));
         }
     }
 

@@ -161,18 +161,41 @@
                 android:layout_above="@id/btnBookingDetailEndBook"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="8dp"
                 android:text="@string/action_ticket" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBookingDetailEndBook"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="16dp"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/spaceBookingDetail"
+                android:layout_marginStart="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="12dp"
                 android:text="@string/action_end_book" />
+
+            <Space
+                android:id="@+id/spaceBookingDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBookingDetailCancel"
+                android:layout_width="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/spaceBookingDetail"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/cancel"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/colorRed" />
         </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>
