@@ -168,12 +168,12 @@
                 android:id="@+id/btnBookingDetailEndBook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:layout_toEndOf="@id/spaceBookingDetail"
+                android:layout_alignParentBottom="true"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="12dp"
+                android:layout_toEndOf="@id/spaceBookingDetail"
                 android:text="@string/action_end_book" />
 
             <Space
@@ -186,13 +186,13 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBookingDetailCancel"
                 android:layout_width="wrap_content"
-                android:layout_alignParentStart="true"
                 android:layout_height="wrap_content"
-                android:layout_toStartOf="@id/spaceBookingDetail"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="12dp"
+                android:layout_toStartOf="@id/spaceBookingDetail"
                 android:text="@string/cancel"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/colorRed" />
