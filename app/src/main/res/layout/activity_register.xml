@@ -176,12 +176,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="fill_horizontal"
-            android:background="@drawable/custom_button2"
+            style="?attr/materialButtonOutlinedStyle"
             android:drawableLeft="@drawable/ic_google"
             android:padding="10dp"
             android:text="@string/register_google"
-            android:textAllCaps="false"
-            android:textColor="@color/blue" />
+            android:textAllCaps="false" />
 
     </LinearLayout>
 

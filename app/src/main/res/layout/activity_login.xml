@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="fill_horizontal"
             android:layout_marginTop="20dp"
-            android:background="@drawable/custom_button2"
+            style="?attr/materialButtonOutlinedStyle"
             android:drawableLeft="@drawable/ic_google"
             android:padding="10dp"
             android:text="@string/login_google"
