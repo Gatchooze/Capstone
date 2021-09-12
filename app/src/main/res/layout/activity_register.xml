@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="25dp">
+        android:padding="16dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
             android:layout_gravity="left"
             android:text="@string/register"
             android:textColor="@android:color/black"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:textStyle="bold" />
 
         <TextView
@@ -46,10 +46,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
             android:text="@string/opening_register"
             android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -57,7 +57,7 @@
             android:layout_gravity="left"
             android:text="@string/full_name"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <EditText
@@ -76,7 +76,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/email"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <EditText
@@ -95,7 +95,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/phone_number"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <RelativeLayout
@@ -127,7 +127,7 @@
             android:layout_gravity="left"
             android:text="@string/password"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -155,7 +155,6 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/custom_button1"
             android:backgroundTint="@color/blue"
-            android:padding="10dp"
             android:text="@string/register"
             android:textAllCaps="false"
             android:textColor="@color/white" />
@@ -168,20 +167,18 @@
             android:text="@string/or"
             android:textAlignment="center"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_register_google"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
-            android:background="@drawable/custom_button2"
+            android:layout_gravity="center_horizontal"
+            style="?attr/materialButtonOutlinedStyle"
             android:drawableLeft="@drawable/ic_google"
-            android:padding="10dp"
             android:text="@string/register_google"
-            android:textAllCaps="false"
-            android:textColor="@color/blue" />
+            android:textAllCaps="false" />
 
     </LinearLayout>
 

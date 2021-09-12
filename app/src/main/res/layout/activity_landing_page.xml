@@ -46,10 +46,9 @@
         android:id="@+id/btn_register"
         android:layout_width="325dp"
         android:layout_height="45dp"
-        android:background="@drawable/custom_button2"
         android:text="@string/register_account"
         android:textAllCaps="false"
-        android:textColor="@color/blue"
+        style="?attr/materialButtonOutlinedStyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/btn_login"
         app:layout_constraintTop_toBottomOf="@+id/btn_login"
@@ -57,8 +56,9 @@
 
     <TextView
         android:id="@+id/txt_terms_of_service"
-        android:layout_width="392dp"
+        android:layout_width="match_parent"
         android:layout_height="51dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text="@string/terms_of_service"
         android:textSize="14sp"

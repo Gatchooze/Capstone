@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ticket.TicketActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/ablTicket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbTicket"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="QR Code" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgTicketQrCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_qr_code"
+        app:layout_constraintBottom_toTopOf="@id/tvTicketId"
+        app:layout_constraintTop_toBottomOf="@id/ablTicket"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTicketId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/label_ticket_id"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvTicketMallName"
+        app:layout_constraintEnd_toEndOf="@id/imgTicketQrCode"
+        app:layout_constraintStart_toStartOf="@id/imgTicketQrCode"
+        app:layout_constraintTop_toBottomOf="@id/imgTicketQrCode" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTicketMallName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvTicketLabelCheckInTime"
+        app:layout_constraintEnd_toEndOf="@id/imgTicketQrCode"
+        app:layout_constraintStart_toStartOf="@id/imgTicketQrCode"
+        app:layout_constraintTop_toBottomOf="@id/tvTicketId"
+        tools:text="Mall 1" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTicketLabelCheckInTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_check_in_time"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvTicketCheckInTime"
+        app:layout_constraintEnd_toStartOf="@id/tvTicketLabelBookedOn"
+        app:layout_constraintStart_toStartOf="@id/imgTicketQrCode"
+        app:layout_constraintTop_toBottomOf="@id/tvTicketMallName" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTicketLabelBookedOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_booked_on"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvTicketBookedOn"
+        app:layout_constraintEnd_toEndOf="@id/imgTicketQrCode"
+        app:layout_constraintStart_toEndOf="@id/tvTicketLabelCheckInTime"
+        app:layout_constraintTop_toTopOf="@id/tvTicketLabelCheckInTime" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTicketCheckInTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/tvTicketLabelLicensePlate"
+        app:layout_constraintEnd_toEndOf="@id/tvTicketLabelCheckInTime"
+        app:layout_constraintStart_toStartOf="@id/tvTicketLabelCheckInTime"
+        app:layout_constraintTop_toBottomOf="@id/tvTicketLabelCheckInTime"
+        tools:text="02:47 PM" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTicketBookedOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/tvTicketCheckInTime"
+        app:layout_constraintEnd_toEndOf="@id/tvTicketLabelBookedOn"
+        app:layout_constraintStart_toStartOf="@id/tvTicketLabelBookedOn"
+        app:layout_constraintTop_toBottomOf="@id/tvTicketLabelBookedOn"
+        tools:text="19/05/2021" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTicketLabelLicensePlate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_license_plate"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/tvTicketLicensePlate"
+        app:layout_constraintEnd_toEndOf="@id/imgTicketQrCode"
+        app:layout_constraintStart_toStartOf="@id/imgTicketQrCode"
+        app:layout_constraintTop_toBottomOf="@id/tvTicketCheckInTime" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTicketLicensePlate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tvTicketLabelLicensePlate"
+        app:layout_constraintStart_toStartOf="@id/tvTicketLabelLicensePlate"
+        app:layout_constraintTop_toBottomOf="@id/tvTicketLabelLicensePlate"
+        tools:text="B1234BG" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

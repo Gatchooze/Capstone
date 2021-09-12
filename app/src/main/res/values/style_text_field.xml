@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CapstoneTextField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextField</item>
+        <item name="boxStrokeColor">@color/text_field_color</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorOnSurface">@color/blue</item>
+        <item name="android:textColorHint">@color/lighter_blue</item>
+    </style>
+
+</resources>

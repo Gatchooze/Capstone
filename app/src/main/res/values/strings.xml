@@ -160,4 +160,30 @@
         to the Application, including all associated intellectual property rights.
     </string>
 
+    <string name="label_license_plate_number">Set Your License Plate Vehicle</string>
+    <string name="label_arrival_time">Set Your Arrival Time</string>
+    <string name="label_time_separator" translatable="false">:</string>
+    <string name="label_arrival_date">Set Your Arrival Date</string>
+    <string name="label_parking_position">Set Your Parking Position</string>
+    <string name="action_next">Next</string>
+    <string name="hint_booking_date">dd/mm/yyyy, Day</string>
+    <string name="hint_license_plate">ex. B1234ASD</string>
+    <string name="error_license_plate">Your license doesn\'t match pattern</string>
+    <string name="hint_00" translatable="false">00</string>
+    <string name="label_am_pm" translatable="false">AM</string>
+    <string name="label_select_date">Please set your date</string>
+    <string name="label_select_time">Please set your time</string>
+    <string name="action_ticket">Ticket</string>
+    <string name="label_ticket_id" translatable="false">AB0123456789</string>
+    <string name="label_check_in_time">Checkin Time</string>
+    <string name="label_booked_on">Booked On</string>
+    <string name="label_license_plate">License Plate</string>
+    <string name="action_end_book">End Book</string>
+    <string name="label_detail" translatable="false">Detail</string>
+    <string name="you_cant_order_in_past">You can\'t order in the past</string>
+    <string name="failed_to_booking">Failed to booking</string>
+    <string name="cancel">Cancel</string>
+    <string name="failed_to_end_book">Failed to end book</string>
+    <string name="failed_to_cancel_book">Failed to cancel Book</string>
+
 </resources>

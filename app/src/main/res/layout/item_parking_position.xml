@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvItemParkingPositionLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:layout_toStartOf="@id/tvItemParkingPositionStatus"
+        android:layout_alignParentStart="true"
+        tools:text="Lobby Utama"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvItemParkingPositionStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:textStyle="bold"
+        android:padding="12dp"
+        tools:text="3 Available"/>
+
+</RelativeLayout>

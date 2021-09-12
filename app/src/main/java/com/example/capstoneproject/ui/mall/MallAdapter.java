@@ -1,29 +1,35 @@
 package com.example.capstoneproject.ui.mall;
 
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
 import android.widget.TextView;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.capstoneproject.R;
+import com.example.capstoneproject.model.Mall;
+import com.example.capstoneproject.utils.ViewUtilsKt;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 public class MallAdapter extends RecyclerView.Adapter<MallAdapter.MallViewHolder> {
-    private ArrayList<MallModel> dataList;
-    private List<MallModel> mMallListFull;
+    private ArrayList<Mall> dataList;
+    private List<Mall> mMallListFull;
     private OnItemClickListener mListener;
 
-    public Filter getFilter() {
+    /*public Filter getFilter() {
         return mallFilter;
-    }
+    }*/
 
-    private Filter mallFilter = new Filter() {
+    /*private Filter mallFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             List<MallModel> filteredList = new ArrayList<>();
@@ -43,15 +49,17 @@ public class MallAdapter extends RecyclerView.Adapter<MallAdapter.MallViewHolder
         }
         @Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
-            dataList.clear();
-            dataList.addAll((List) results.values);
-            notifyDataSetChanged();
+            if(results.values != null){
+                dataList.clear();
+                dataList.addAll((List) results.values);
+                notifyDataSetChanged();
+            }
         }
-    };
+    };*/
 
 
     public interface OnItemClickListener {
-        void onItemClick(int position);
+        void onItemClick(int id);
     }
 
     public void setOnItemClickListener(OnItemClickListener listener) {
@@ -61,8 +69,9 @@ public class MallAdapter extends RecyclerView.Adapter<MallAdapter.MallViewHolder
     public static class MallViewHolder extends RecyclerView.ViewHolder {
         public TextView mMallName;
         public TextView mRating;
-        public TextView mCarCapacity;
-        public TextView mMotorCapacity;
+        public TextView mCarAvailable;
+        public TextView mMotorAvailable;
+        public OnItemClickListener onItemClickListener;
 
 //        public TextView mDistance;
 //        public TextView mStatus;
@@ -71,52 +80,71 @@ public class MallAdapter extends RecyclerView.Adapter<MallAdapter.MallViewHolder
             super(itemView);
             mMallName = itemView.findViewById(R.id.list_name);
             mRating = itemView.findViewById(R.id.list_rating);
-            mCarCapacity = itemView.findViewById(R.id.list_car_status);
-            mMotorCapacity = itemView.findViewById(R.id.list_motor_status);
+            mCarAvailable = itemView.findViewById(R.id.list_car_status);
+            mMotorAvailable = itemView.findViewById(R.id.list_motor_status);
+            onItemClickListener = listener;
 
 //            mDistance = itemView.findViewById(R.id.distance);
 //            mStatus = itemView.findViewById(R.id.open_close);
+        }
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (listener != null) {
-                        int position = getAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION) {
-                            listener.onItemClick(position);
-                        }
-                    }
+        public void bind(Mall mall){
+            itemView.setOnClickListener(v -> {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onItemClick(mall.getId());
                 }
             });
+
+            mMallName.setText(mall.getName());
+            String rating = String.format(Locale.getDefault(), "%.1f", mall.getRating()) + "/5.0";
+            mRating.setText(rating);
+            SpannableStringBuilder carAvailable;
+            if(mall.isCarFull()){
+                carAvailable = ViewUtilsKt.getSpannableString("Full", itemView.getContext(), R.color.colorRed);
+            }else{
+                String value = mall.getCarCapacity() - mall.getCarOccupied() + " Available";
+                carAvailable = ViewUtilsKt.getSpannableString(value, itemView.getContext(), R.color.colorGreen);
+            }
+            mCarAvailable.setText(carAvailable);
+            SpannableStringBuilder motorcycleAvailable;
+            if(mall.isMotorcycleFull()){
+                motorcycleAvailable = ViewUtilsKt.getSpannableString("Full", itemView.getContext(), R.color.colorRed);
+            }else{
+                String value = mall.getMotorcycleCapacity() - mall.getMotorcycleOccupied() + " Available";
+                motorcycleAvailable = ViewUtilsKt.getSpannableString(value, itemView.getContext(), R.color.colorGreen);
+            }
+            mMotorAvailable.setText(motorcycleAvailable);
         }
     }
 
-    public MallAdapter(ArrayList<MallModel> exampleList) {
+    public MallAdapter(ArrayList<Mall> exampleList) {
         dataList = exampleList;
     }
 
     @Override
     public MallViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_mall, parent, false);
         MallViewHolder mvh = new MallViewHolder(v, mListener);
         return mvh;
     }
 
     @Override
     public void onBindViewHolder(MallViewHolder holder, int position) {
-        MallModel currentItem = dataList.get(position);
+        Mall currentItem = dataList.get(position);
+        holder.bind(currentItem);
 
-        holder.mMallName.setText(currentItem.getmName());
-        holder.mRating.setText(currentItem.getmRating());
-        holder.mCarCapacity.setText(currentItem.getmCarCapacity());
-        holder.mMotorCapacity.setText(currentItem.getmMotorCapacity());
-
-//        holder.mDistance.setText(currentItem.getmDistance());
-//        holder.mStatus.setText(currentItem.getmStatus());
+        /*holder.mDistance.setText(currentItem.getmDistance());
+        holder.mStatus.setText(currentItem.getmStatus());*/
     }
 
     @Override
     public int getItemCount() {
         return dataList.size();
+    }
+
+    public void setData(List<Mall> malls){
+        dataList.clear();
+        dataList.addAll(malls);
+        notifyDataSetChanged();
     }
 }

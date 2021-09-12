@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".ui.booking.EndBookConfirmFragment">
+
+    <View
+        android:id="@+id/dragIndicatorEndBookConfirm"
+        android:layout_width="60dp"
+        android:layout_height="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bg_shape_oval"
+        app:backgroundTint="@color/colorGrey" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEndBookConfirmDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dragIndicatorEndBookConfirm"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/label_detail"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEndBookConfirmTimeIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEndBookConfirmDetail"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp"
+        tools:text="02:47 PM\t\tin" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEndBookConfirmTimeOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEndBookConfirmDetail"
+        android:layout_marginEnd="16dp"
+        android:layout_toEndOf="@id/tvEndBookConfirmTimeIn"
+        android:textSize="16sp"
+        tools:text="02:47 PM\t\tout" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEndBookConfirmLabelLicensePlate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEndBookConfirmTimeIn"
+        android:layout_marginStart="32dp"
+        android:text="@string/license_plate"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvEndBookConfirmLicensePlate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEndBookConfirmLabelLicensePlate"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp"
+        tools:text="B1234G" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEndBookConfirmConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEndBookConfirmLicensePlate"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/action_end_book" />
+
+</RelativeLayout>
